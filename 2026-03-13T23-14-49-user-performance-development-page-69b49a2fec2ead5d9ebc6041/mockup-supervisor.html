@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Performance Reports — My Team</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+</head>
+<body>
+  <h1>Performance Reports — My Team</h1>
+
+  <div class="info-banner">
+    ℹ️ You can download: <strong>Self Assessments</strong> and <strong>Feedback</strong> reports for your direct reports and mentees.
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-group">
+      <label>Report Types</label>
+      <div class="select-mock" style="min-width:230px;">Self Assessment, Feedback</div>
+    </div>
+    <div class="filter-group">
+      <label>Assessment Year</label>
+      <select>
+        <option>2025</option>
+        <option>2024</option>
+        <option>2023</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Search by name</label>
+      <input type="text" placeholder="Search team members..." style="min-width:200px;">
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <span class="selection-count">2 of 8 team members selected</span>
+    </div>
+    <div class="toolbar-right">
+      <button class="btn btn-primary">⬇ Download Selected (2) as ZIP</button>
+      <button class="btn btn-secondary">⬇ Download All (8) as ZIP</button>
+    </div>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th class="th-check"><input type="checkbox"></th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Self Assessment</th>
+        <th>Feedback</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="selected">
+        <td class="td-check"><input type="checkbox" checked></td>
+        <td>Marek Nowak</td>
+        <td><span class="badge badge-primary">Direct report</span></td>
+        <td><span class="badge badge-success">✓</span></td>
+        <td><span class="badge badge-muted">—</span></td>
+        <td><button class="btn btn-light btn-sm">⬇ Download</button></td>
+      </tr>
+      <tr>
+        <td class="td-check"><input type="checkbox"></td>
+        <td>Sofia Bondarenko</td>
+        <td><span class="badge badge-primary">Direct report</span></td>
+        <td><span class="badge badge-success">✓</span></td>
+        <td><span class="badge badge-success">✓</span></td>
+        <td><button class="btn btn-light btn-sm">⬇ Download</button></td>
+      </tr>
+      <tr>
+        <td class="td-check"><input type="checkbox"></td>
+        <td>Dmitri Volkov</td>
+        <td><span class="badge badge-primary">Direct report</span></td>
+        <td><span class="badge badge-success">✓</span></td>
+        <td><span class="badge badge-muted">—</span></td>
+        <td><button class="btn btn-light btn-sm">⬇ Download</button></td>
+      </tr>
+      <tr class="selected">
+        <td class="td-check"><input type="checkbox" checked></td>
+        <td>Tetiana Petrenko</td>
+        <td><span class="badge badge-warning">Mentee</span></td>
+        <td><span class="badge badge-success">✓</span></td>
+        <td><span class="badge badge-success">✓</span></td>
+        <td><button class="btn btn-light btn-sm">⬇ Download</button></td>
+      </tr>
+      <tr>
+        <td class="td-check"><input type="checkbox"></td>
+        <td>Roman Kovalenko</td>
+        <td><span class="badge badge-warning">Mentee</span></td>
+        <td><span class="badge badge-muted">—</span></td>
+        <td><span class="badge badge-muted">—</span></td>
+        <td>
+          <button class="btn btn-light btn-sm" disabled style="opacity:.45; cursor:not-allowed;">⬇ Download</button>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-check"><input type="checkbox"></td>
+        <td>Halyna Moroz</td>
+        <td><span class="badge badge-warning">Mentee</span></td>
+        <td><span class="badge badge-success">✓</span></td>
+        <td><span class="badge badge-muted">—</span></td>
+        <td><button class="btn btn-light btn-sm">⬇ Download</button></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
