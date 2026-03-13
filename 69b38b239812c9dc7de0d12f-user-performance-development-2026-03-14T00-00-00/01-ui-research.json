@@ -1,0 +1,124 @@
+{
+  "module": "assessment360",
+  "entity": "ReportDownload",
+  "reference_pages": [
+    {
+      "path": "src/pages/assessment360/pdp360/containers/Pdp360Page.tsx",
+      "name": "Pdp360Page",
+      "layout_type": "Multi-tab report viewer with role-based user selection",
+      "components_used": [
+        "AppLayout",
+        "Dropdown",
+        "TabsContainer",
+        "Card",
+        "RadioButtons",
+        "Label",
+        "UserChip"
+      ],
+      "patterns_noted": [
+        "Feature-based conditional rendering (isSupervisor flag determines visible tabs)",
+        "User impersonation for supervisors viewing subordinates",
+        "Tab-based organization of related reports",
+        "Mentor/Supervisor relationship display"
+      ]
+    },
+    {
+      "path": "src/pages/assessment360/assessmentReport/containers/AssessmentReportPage.tsx",
+      "name": "AssessmentReportPage",
+      "layout_type": "Single entity report viewer with selector toolbar",
+      "components_used": [
+        "AppLayout",
+        "Dropdown",
+        "Button",
+        "TabsContainer",
+        "Skeleton"
+      ],
+      "patterns_noted": [
+        "Role-based user list filtering: admin sees all, supervisor sees subordinates only",
+        "Print functionality integrated",
+        "Dynamic user options based on current user role"
+      ]
+    },
+    {
+      "path": "src/pages/hrs/features/containers/FeaturesPage.tsx",
+      "name": "FeaturesPage",
+      "layout_type": "Hierarchical feature tree with staff assignment",
+      "components_used": [
+        "AdminPage",
+        "AdminFilterRow",
+        "FilterText",
+        "FilterAutocomplete",
+        "DropdownList",
+        "Modal",
+        "Label",
+        "ConfirmButton"
+      ],
+      "patterns_noted": [
+        "Tree structure for hierarchical permissions",
+        "Staff autocomplete for granting features",
+        "Company/Staff multi-filter support",
+        "Modal for complex permission configuration"
+      ]
+    }
+  ],
+  "similar_patterns": [
+    {
+      "pattern": "Download Export with Query String",
+      "source": "DownloadTimesheetsButton.tsx",
+      "location": "src/pages/timesheet/projectTimesheets/components/",
+      "description": "Builds query string from filter state and generates download link to API endpoint"
+    },
+    {
+      "pattern": "AdminPage with Bulk Actions",
+      "source": "AdminPageLayout.tsx + AdminToolbar.tsx",
+      "location": "src/components/AdminPage/",
+      "description": "Toolbar with action buttons above table, table with row selection support via canSelectRows prop"
+    },
+    {
+      "pattern": "Role-Based Access Control",
+      "source": "AssessmentReportPage.tsx + Pdp360Page.tsx",
+      "description": "Feature flags (FEATURE.assessment360.*) determine UI visibility and user list filtering"
+    },
+    {
+      "pattern": "Multi-Select Autocomplete",
+      "source": "FeaturesPage.tsx",
+      "description": "FilterAutocomplete with isMulti=true for selecting multiple staff/companies"
+    }
+  ],
+  "components_needed": [
+    { "name": "Checkbox", "path": "src/components/Checkbox" },
+    { "name": "Table", "path": "src/components/Table" },
+    { "name": "Modal", "path": "src/components/Modal" },
+    { "name": "Dropdown", "path": "src/components/Dropdown" },
+    { "name": "FilterAutocomplete", "path": "src/components/Filter" },
+    { "name": "AdminFilterRow", "path": "src/components/Filter" },
+    { "name": "Button", "path": "src/components/Button" },
+    { "name": "LinkButton", "path": "src/components/Button" },
+    { "name": "Card", "path": "src/components/Card" },
+    { "name": "Label", "path": "src/components/Labels" },
+    { "name": "TabsContainer", "path": "src/components/Tabs" }
+  ],
+  "image_observations": [
+    "Trello image URL was inaccessible — inferred from description",
+    "Page likely shows user/assessment selector at top",
+    "Tab-based organization of Annual Targets, Self Assessment, Feedback, Competency Evaluation",
+    "Role-based content: supervisors see limited tabs compared to admins"
+  ],
+  "design_recommendations": [
+    {
+      "name": "Admin Report Download Manager",
+      "layout": "Filter bar (company + user multi-select) + Table with row selection + Bulk download toolbar",
+      "key_components": ["AdminFilterRow", "Table with canSelectRows", "Checkbox", "LinkButton"]
+    },
+    {
+      "name": "Supervisor/Mentor Report Download",
+      "layout": "Role info panel + Subordinates checklist + Pre-configured report types + Download button",
+      "key_components": ["Card", "Checkbox", "Label", "Button"]
+    },
+    {
+      "name": "Report Access Control (Admin)",
+      "layout": "Hierarchical tree (Role > Report Type > Allowed Users) + Filter bar + In-place grant/revoke",
+      "key_components": ["AdminPage", "FilterAutocomplete", "DropdownList", "Modal"]
+    }
+  ]
+}
