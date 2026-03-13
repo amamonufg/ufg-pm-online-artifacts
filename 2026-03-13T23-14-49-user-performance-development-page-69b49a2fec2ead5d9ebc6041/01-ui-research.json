@@ -1,0 +1,58 @@
+{
+  "module": "assessment360",
+  "reference_page": {
+    "path": "src/pages/assessment360/assessmentProgressReport/containers/AssessmentProgressReportPage.tsx",
+    "layout_type": "admin list page with filter row and download button",
+    "components_used": [
+      "src/components/Layout (AppLayout)",
+      "src/components/AdminPage (AdminPage, AdminFilterRow, AdminTable, useAdminPageContext)",
+      "src/components/Filter (FilterAutocomplete, FilterSelect, FilterRadioButtons)",
+      "src/components/Link (LinkButton)",
+      "src/components/Labels (Label)"
+    ],
+    "patterns_noted": [
+      "Download via LinkButton with URL constructed from toQueryString(filter)",
+      "Company multi-select filter with FilterSelect({ isMulti: true })",
+      "Feature-gated page via AppLayout feature prop",
+      "AdminFilterRow for filter panel above table",
+      "AdminTable with custom cell renderers per column"
+    ]
+  },
+  "similar_patterns": [
+    {
+      "description": "Feature/rights assignment per user — add/remove users for specific permissions",
+      "found_at": "src/pages/hrs/features/containers/FeaturesPage.tsx"
+    },
+    {
+      "description": "Staff list download with company/business-unit filters",
+      "found_at": "src/pages/hrs/staff/containers/StaffPage.tsx"
+    },
+    {
+      "description": "Role-gated page sections via Feature component with fallback",
+      "found_at": "src/pages/hrs/staff/containers/StaffPage.tsx"
+    }
+  ],
+  "components_needed": [
+    { "name": "AdminPage", "path": "src/components/AdminPage" },
+    { "name": "AdminFilterRow", "path": "src/components/AdminPage" },
+    { "name": "AdminTable", "path": "src/components/AdminPage" },
+    { "name": "AppLayout", "path": "src/components/Layout" },
+    { "name": "FilterAutocomplete", "path": "src/components/Filter" },
+    { "name": "FilterSelect", "path": "src/components/Filter" },
+    { "name": "LinkButton", "path": "src/components/Link" },
+    { "name": "Modal / ModalContext", "path": "src/components/Modal" },
+    { "name": "Form", "path": "src/components/Form" },
+    { "name": "Button / ConfirmButton", "path": "src/components/Button" },
+    { "name": "Label", "path": "src/components/Labels" },
+    { "name": "DropdownList", "path": "src/components/Dropdown" },
+    { "name": "Checkbox", "path": "src/components/Checkbox" },
+    { "name": "Tabs / TabsContainer", "path": "src/components/Tabs" }
+  ],
+  "image_observations": [
+    "Image could not be loaded (Trello authentication required)",
+    "Card description references an existing user performance development page",
+    "The feature requires: admin view (all users/companies), supervisor/mentor view (subordinates only), rights config page (restrict report types per role)",
+    "Report types to download: annual targets, self assessments, feedback, competency evaluation",
+    "Bulk download: select by company, select all/some users, download as ZIP archive"
+  ]
+}
