@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report Download Access Configuration</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+</head>
+<body>
+  <h1>Report Download Access Configuration</h1>
+
+  <div class="info-banner">
+    ℹ️ Configure which roles can download each report type. Admins always have full access and cannot be restricted.
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width:200px;">Report Type</th>
+        <th style="width:300px;">Description</th>
+        <th>Roles with Download Access</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Annual Targets</strong></td>
+        <td style="color:#666;">Year-end target achievement summary for each staff member</td>
+        <td>
+          <div class="role-chips">
+            <span class="badge-role" style="background:#f0f0f0;color:#888;">Admin</span>
+            <button class="add-role-btn">+ Add role</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Self Assessment</strong></td>
+        <td style="color:#666;">Staff self-evaluation submitted during the assessment cycle</td>
+        <td>
+          <div class="role-chips">
+            <span class="badge-role" style="background:#f0f0f0;color:#888;">Admin</span>
+            <span class="badge-role">Supervisor <span class="remove">✕</span></span>
+            <span class="badge-role">Mentor <span class="remove">✕</span></span>
+            <button class="add-role-btn">+ Add role</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Feedback</strong></td>
+        <td style="color:#666;">360-degree feedback collected from peers, supervisors and mentors</td>
+        <td>
+          <div class="role-chips">
+            <span class="badge-role" style="background:#f0f0f0;color:#888;">Admin</span>
+            <span class="badge-role">Supervisor <span class="remove">✕</span></span>
+            <span class="badge-role">Mentor <span class="remove">✕</span></span>
+            <button class="add-role-btn">+ Add role</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Competency Evaluation</strong></td>
+        <td style="color:#666;">Competency matrix scores evaluated by the staff member's mentor or supervisor</td>
+        <td>
+          <div class="role-chips">
+            <span class="badge-role" style="background:#f0f0f0;color:#888;">Admin</span>
+            <button class="add-role-btn">+ Add role</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:20px; padding:14px; background:#f8f9fa; border:1px solid #e8e8e8; border-radius:6px; font-size:13px; color:#555;">
+    <strong>Available roles:</strong> Supervisor, Mentor
+    &nbsp;·&nbsp; Changes take effect immediately for all users with those roles.
+  </div>
+</body>
+</html>
