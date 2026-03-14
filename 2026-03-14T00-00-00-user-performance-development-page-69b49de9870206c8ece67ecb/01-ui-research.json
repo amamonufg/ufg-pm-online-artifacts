@@ -1,0 +1,45 @@
+{
+  "module": "Assessment360 / Performance",
+  "reference_page": {
+    "path": "src/pages/hrs/professionalDevelopment/containers/ProfessionalDevelopmentPage.tsx",
+    "layout_type": "admin list page with bulk selection",
+    "components_used": [
+      "src/components/AdminPage",
+      "src/components/Table",
+      "src/components/Checkbox",
+      "src/components/Dropdown",
+      "src/components/Button",
+      "src/components/Labels"
+    ],
+    "patterns_noted": [
+      "AdminPage pattern: toolbar + filter row + table + modal actions",
+      "Bulk row selection via RowSelectColumn checkbox",
+      "Filter row with company/entity dropdowns and search input",
+      "Primary action button in toolbar (Download Selected with count)",
+      "Row-level action buttons for single-item operations"
+    ]
+  },
+  "similar_patterns": [
+    {
+      "description": "Tabbed report viewer with user and assessment dropdown selectors in header",
+      "found_at": "src/pages/assessment360/assessmentReport/containers/AssessmentReportPage.tsx"
+    },
+    {
+      "description": "Admin list with status labels and bulk toolbar actions",
+      "found_at": "src/pages/hrs/professionalDevelopment/containers/ProfessionalDevelopmentPage.tsx"
+    }
+  ],
+  "components_needed": [
+    { "name": "AdminPage / AdminTable / AdminToolbar / AdminFilterRow", "path": "src/components/AdminPage" },
+    { "name": "Checkbox / RowSelectColumn", "path": "src/components/Checkbox" },
+    { "name": "Dropdown", "path": "src/components/Dropdown" },
+    { "name": "Button", "path": "src/components/Button" },
+    { "name": "Label / LabelInfo / LabelMuted", "path": "src/components/Labels" },
+    { "name": "Table / TableColumn / TableAction", "path": "src/components/Table" },
+    { "name": "Alert", "path": "src/components/Alert" }
+  ],
+  "image_observations": [
+    "Image URL was inaccessible due to Trello authentication restriction — design based on card description text only",
+    "Card references the existing user performance development page as a starting point"
+  ]
+}
