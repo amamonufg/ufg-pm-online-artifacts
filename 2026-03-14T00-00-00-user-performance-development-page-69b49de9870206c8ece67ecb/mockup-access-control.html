@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Report Access Configuration</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+</head>
+<body>
+  <h1>Report Access Configuration</h1>
+  <p class="text-muted" style="margin-bottom:24px">
+    Control which performance report types supervisors and mentors can download for their direct reports and mentees.
+    Changes apply immediately to all users with the corresponding role.
+  </p>
+
+  <div class="banner banner-warning">
+    <span class="banner-icon">⚠</span>
+    <div>
+      Restricting access to a report type will prevent supervisors and mentors from downloading those reports,
+      even if they previously had access. Currently active download sessions are not affected.
+    </div>
+  </div>
+
+  <!-- Access matrix card -->
+  <div class="card">
+    <div class="card-title">
+      Report Type Access
+      <div class="card-subtitle">Select which report types each role is permitted to download</div>
+    </div>
+
+    <!-- Header row -->
+    <div class="check-grid-header">
+      <div>Report Type</div>
+      <div class="col-center">Supervisors</div>
+      <div class="col-center">Mentors</div>
+    </div>
+
+    <!-- Annual Targets -->
+    <div class="check-row">
+      <div>
+        <div class="check-row-label">Annual Targets</div>
+        <div class="check-row-desc">Goal-setting and target achievement reports for the review year</div>
+      </div>
+      <div class="check-row-cell"><input type="checkbox" checked></div>
+      <div class="check-row-cell"><input type="checkbox" checked></div>
+    </div>
+
+    <!-- Self Assessment -->
+    <div class="check-row">
+      <div>
+        <div class="check-row-label">Self Assessment</div>
+        <div class="check-row-desc">Employee's own performance and development self-evaluation</div>
+      </div>
+      <div class="check-row-cell"><input type="checkbox" checked></div>
+      <div class="check-row-cell"><input type="checkbox" checked></div>
+    </div>
+
+    <!-- Feedback -->
+    <div class="check-row">
+      <div>
+        <div class="check-row-label">Feedback</div>
+        <div class="check-row-desc">360-degree feedback collected from peers and managers</div>
+      </div>
+      <div class="check-row-cell"><input type="checkbox" checked></div>
+      <div class="check-row-cell"><input type="checkbox"></div>
+    </div>
+
+    <!-- Competency Evaluation -->
+    <div class="check-row">
+      <div>
+        <div class="check-row-label">Competency Evaluation</div>
+        <div class="check-row-desc">Structured competency assessment against role grade matrix</div>
+      </div>
+      <div class="check-row-cell"><input type="checkbox"></div>
+      <div class="check-row-cell"><input type="checkbox"></div>
+    </div>
+  </div>
+
+  <!-- Scope note card -->
+  <div class="card">
+    <div class="card-title">Visibility Scope</div>
+    <div class="check-row">
+      <div>
+        <div class="check-row-label">Supervisors — visible staff</div>
+        <div class="check-row-desc">Supervisors can only see and download reports for their direct reports</div>
+      </div>
+      <div class="check-row-cell" style="grid-column: span 2; justify-content: flex-start; padding-left: 24px;">
+        <span class="badge badge-success">Direct reports only</span>
+      </div>
+    </div>
+    <div class="check-row">
+      <div>
+        <div class="check-row-label">Mentors — visible staff</div>
+        <div class="check-row-desc">Mentors can only see and download reports for their assigned mentees</div>
+      </div>
+      <div class="check-row-cell" style="grid-column: span 2; justify-content: flex-start; padding-left: 24px;">
+        <span class="badge badge-success">Mentees only</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-actions">
+    <button class="btn btn-secondary">Cancel</button>
+    <button class="btn btn-success">Save Configuration</button>
+  </div>
+</body>
+</html>
