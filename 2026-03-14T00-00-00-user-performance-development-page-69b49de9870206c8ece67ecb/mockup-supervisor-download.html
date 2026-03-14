@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Performance Reports — Supervisor</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+</head>
+<body>
+  <h1>Performance Reports</h1>
+
+  <!-- Scope banner -->
+  <div class="banner banner-info">
+    <span class="banner-icon">ℹ</span>
+    <div>
+      You are viewing reports for <strong>12 staff members</strong> — your 8 direct reports and 4 mentees.
+      Some report types are restricted by your access level. Contact an administrator to request additional access.
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <div class="filter-group">
+        <label class="field-label">Year</label>
+        <select style="width:100px">
+          <option>2025</option>
+          <option selected>2024</option>
+          <option>2023</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="field-label">Report Type</label>
+        <select style="width:190px">
+          <option selected>All Accessible Types</option>
+          <option>Annual Targets</option>
+          <option>Self Assessment</option>
+          <option>Feedback</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="field-label">Show</label>
+        <select style="width:160px">
+          <option selected>Direct reports + Mentees</option>
+          <option>Direct reports only</option>
+          <option>Mentees only</option>
+        </select>
+      </div>
+    </div>
+    <div class="toolbar-right">
+      <span class="selection-info">2 users selected</span>
+      <button class="btn btn-secondary">Download All (12)</button>
+      <button class="btn btn-primary">⬇ Download Selected (2)</button>
+    </div>
+  </div>
+
+  <!-- Search filter -->
+  <div class="filter-row">
+    <input type="search" placeholder="Search by name or role…">
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th class="checkbox-col center"><input type="checkbox"></th>
+          <th>Staff Member</th>
+          <th>Relationship</th>
+          <th class="center">Annual Targets</th>
+          <th class="center">Self Assessment</th>
+          <th class="center">Feedback</th>
+          <th class="center restricted-col" title="Access restricted">Competency Eval. 🔒</th>
+          <th class="action-col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="selected">
+          <td class="center"><input type="checkbox" checked></td>
+          <td>
+            <div class="user-name">Artem Belousov</div>
+            <div class="user-role">Junior Analyst</div>
+          </td>
+          <td><span class="badge badge-info">Direct report</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="locked">Restricted</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr class="selected">
+          <td class="center"><input type="checkbox" checked></td>
+          <td>
+            <div class="user-name">Ksenia Romanova</div>
+            <div class="user-role">Analyst</div>
+          </td>
+          <td><span class="badge badge-info">Direct report</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="locked">Restricted</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Pavel Grigoriev</div>
+            <div class="user-role">Research Associate</div>
+          </td>
+          <td><span class="badge badge-muted">Mentee</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="locked">Restricted</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Tatiana Orlova</div>
+            <div class="user-role">Financial Analyst</div>
+          </td>
+          <td><span class="badge badge-info">Direct report</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="locked">Restricted</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Maxim Stepanov</div>
+            <div class="user-role">Compliance Analyst</div>
+          </td>
+          <td><span class="badge badge-muted">Mentee</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="locked">Restricted</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Yulia Ivanova</div>
+            <div class="user-role">Junior Associate</div>
+          </td>
+          <td><span class="badge badge-info">Direct report</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="locked">Restricted</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <span>Showing 6 of 12 staff members</span>
+    <div class="page-btns">
+      <button class="page-btn">←</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">→</button>
+    </div>
+  </div>
+</body>
+</html>
