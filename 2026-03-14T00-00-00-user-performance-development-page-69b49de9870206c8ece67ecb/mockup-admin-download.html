@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Performance Reports — Admin</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+</head>
+<body>
+  <h1>Performance Reports</h1>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <div class="filter-group">
+        <label class="field-label">Company</label>
+        <select style="width:180px">
+          <option>All Companies</option>
+          <option selected>Altus Capital</option>
+          <option>Family Office</option>
+          <option>UFGAM</option>
+          <option>UFG Wealth Management</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="field-label">Year</label>
+        <select style="width:100px">
+          <option>2025</option>
+          <option selected>2024</option>
+          <option>2023</option>
+          <option>2022</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="field-label">Report Type</label>
+        <select style="width:190px">
+          <option selected>All Report Types</option>
+          <option>Annual Targets</option>
+          <option>Self Assessment</option>
+          <option>Feedback</option>
+          <option>Competency Evaluation</option>
+        </select>
+      </div>
+    </div>
+    <div class="toolbar-right">
+      <span class="selection-info">3 users selected</span>
+      <button class="btn btn-secondary">Download All (24)</button>
+      <button class="btn btn-primary">⬇ Download Selected (3)</button>
+    </div>
+  </div>
+
+  <!-- Search filter -->
+  <div class="filter-row">
+    <input type="search" placeholder="Search by name or role…">
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th class="checkbox-col center"><input type="checkbox"></th>
+          <th>Staff Member</th>
+          <th>Company</th>
+          <th class="center">Annual Targets</th>
+          <th class="center">Self Assessment</th>
+          <th class="center">Feedback</th>
+          <th class="center">Competency Eval.</th>
+          <th class="action-col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="selected">
+          <td class="center"><input type="checkbox" checked></td>
+          <td>
+            <div class="user-name">Alexander Petrov</div>
+            <div class="user-role">Investment Manager</div>
+          </td>
+          <td>Altus Capital</td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Maria Sokolova</div>
+            <div class="user-role">Senior Analyst</div>
+          </td>
+          <td>Altus Capital</td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr class="selected">
+          <td class="center"><input type="checkbox" checked></td>
+          <td>
+            <div class="user-name">Dmitri Volkov</div>
+            <div class="user-role">Portfolio Manager</div>
+          </td>
+          <td>Altus Capital</td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr class="selected">
+          <td class="center"><input type="checkbox" checked></td>
+          <td>
+            <div class="user-name">Elena Morozova</div>
+            <div class="user-role">Compliance Officer</div>
+          </td>
+          <td>Altus Capital</td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Ivan Kozlov</div>
+            <div class="user-role">Risk Analyst</div>
+          </td>
+          <td>Altus Capital</td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Natalia Smirnova</div>
+            <div class="user-role">Financial Analyst</div>
+          </td>
+          <td>Altus Capital</td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Sergei Nikolaev</div>
+            <div class="user-role">Associate</div>
+          </td>
+          <td>Altus Capital</td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+        <tr>
+          <td class="center"><input type="checkbox"></td>
+          <td>
+            <div class="user-name">Olga Fedorova</div>
+            <div class="user-role">Operations Manager</div>
+          </td>
+          <td>Altus Capital</td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><span class="unavail">—</span></td>
+          <td class="center"><span class="avail">✓</span></td>
+          <td class="center"><button class="btn btn-ghost btn-sm">⬇ Download</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <span>Showing 8 of 24 staff members</span>
+    <div class="page-btns">
+      <button class="page-btn">←</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">→</button>
+    </div>
+  </div>
+</body>
+</html>
