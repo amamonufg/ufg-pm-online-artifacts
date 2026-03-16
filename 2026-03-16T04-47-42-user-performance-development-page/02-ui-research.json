@@ -1,0 +1,69 @@
+{
+  "module": "Assessment 360 - Performance Development",
+  "reference_page": {
+    "path": "src/pages/assessment360/pdp360/containers/Pdp360Page.tsx",
+    "layout_type": "tabbed detail page with role-based access control",
+    "components_used": [
+      "src/components/Tabs (TabsContainer, Tab)",
+      "src/components/Dropdown",
+      "src/components/Button",
+      "src/components/Link (LinkButton)",
+      "src/components/Card",
+      "src/components/Alert",
+      "src/components/Labels",
+      "src/components/Symbol (StaffSymbol, UserSymbol)",
+      "src/components/Radio (RadioButtons)",
+      "src/components/Modal"
+    ],
+    "patterns_noted": [
+      "Multiple tabs for different assessment types: Annual targets, Self assessment, Feedback, Competency evaluation, Summary",
+      "User selection via RadioButtons with avatar chips showing role (You, Supervisor, Mentor, Subordinate)",
+      "Assessment period selector dropdown with Active/Inactive status labels",
+      "Permission-based tab visibility: supervisors see restricted view, different content for mentors vs. employees",
+      "SendToMentorButton with Popover showing mentor/supervisor information",
+      "MentorDisplay component showing supervisor and mentor chips"
+    ]
+  },
+  "similar_patterns": [
+    {
+      "description": "Single report download with filtered query string",
+      "found_at": "src/pages/assessment360/assessmentProgressReport/containers/AssessmentProgressReportPage.tsx",
+      "implementation": "DownloadReportLink component using LinkButton with href to /api/360/assessment/progress/download/{filename}?{qs}"
+    },
+    {
+      "description": "Bulk ZIP download with filter-based filename",
+      "found_at": "src/pages/invoice/containers/InvoicePage.tsx",
+      "implementation": "BulkDownloadPdfLink using /api/invoices/pdf/{filename}.zip?{qs} pattern with filter context"
+    },
+    {
+      "description": "Staff list download with company/department filters",
+      "found_at": "src/pages/hrs/staff/containers/StaffPage.tsx",
+      "implementation": "DownloadReportLink in toolbar using /api/staff/download/{filename}?{qs}"
+    },
+    {
+      "description": "Table row selection with checkboxes for bulk operations",
+      "found_at": "src/components/Table/RowSelectColumn.tsx",
+      "implementation": "useRowSelectColumn hook with select-all header checkbox and per-row canSelectRows predicate"
+    }
+  ],
+  "components_needed": [
+    { "name": "LinkButton", "path": "src/components/Link" },
+    { "name": "Modal / ModalContext", "path": "src/components/Modal" },
+    { "name": "Dropdown (isMulti)", "path": "src/components/Dropdown" },
+    { "name": "Checkbox", "path": "src/components/Checkbox" },
+    { "name": "AdminPage / AdminTable / AdminFilterRow", "path": "src/components/AdminPage" },
+    { "name": "FilterSelect (isMulti)", "path": "src/components/Filter" },
+    { "name": "FilterAutocomplete", "path": "src/components/Filter" },
+    { "name": "Label", "path": "src/components/Labels" },
+    { "name": "Alert", "path": "src/components/Alert" },
+    { "name": "AppLayout", "path": "src/components/Layout" }
+  ],
+  "image_observations": [
+    "Page header: Assessment dropdown (e.g. '2025 Active'), three date range indicators (Objectives setting 03.03.25-14.04.25, Mid year 02.06.25-02.11.25, End year 26.01.26-29.03.26) — active period highlighted",
+    "User selection strip: avatar chips with name and role labels ('You', 'Subordinate') — allows switching whose data is viewed",
+    "Tab navigation: Annual targets | Self assessment | Feedback | Competency evaluation | Summary",
+    "Card content area with 'Business & Personal Development Goals' title, 'Download report' (dark) and 'Send report to supervisor' (green) buttons top right",
+    "Empty state: warning triangle icon inside light grey rounded panel",
+    "Edit button (outlined small) at bottom left of card"
+  ]
+}
