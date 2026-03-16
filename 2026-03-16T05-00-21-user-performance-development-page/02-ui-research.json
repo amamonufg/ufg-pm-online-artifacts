@@ -1,0 +1,54 @@
+{
+  "module": "Assessment 360 - Performance Development",
+  "reference_page": {
+    "path": "src/pages/assessment360/pdp360/containers/Pdp360Page.tsx",
+    "layout_type": "tabbed detail page with role-based access control",
+    "components_used": [
+      "src/components/Tabs (TabsContainer, Tab)",
+      "src/components/Dropdown",
+      "src/components/Button",
+      "src/components/Link (LinkButton)",
+      "src/components/Labels",
+      "src/components/Modal",
+      "src/components/AdminPage (AdminTable, AdminFilterRow)"
+    ],
+    "patterns_noted": [
+      "Multiple tabs: Annual targets, Self assessment, Feedback, Competency evaluation, Summary",
+      "User selection strip with avatar chips and role labels (You, Supervisor, Mentor, Subordinate)",
+      "Assessment period selector dropdown with Active/Inactive status labels",
+      "Permission-based tab visibility — supervisors see restricted view",
+      "Download report and Send to supervisor action buttons in card header"
+    ]
+  },
+  "similar_patterns": [
+    {
+      "description": "Single report download with filtered query string",
+      "found_at": "src/pages/assessment360/assessmentProgressReport/containers/AssessmentProgressReportPage.tsx"
+    },
+    {
+      "description": "Bulk ZIP download with filter-based filename",
+      "found_at": "src/pages/invoice/containers/InvoicePage.tsx"
+    },
+    {
+      "description": "Table row selection with checkboxes for bulk operations",
+      "found_at": "src/components/Table/RowSelectColumn.tsx (useRowSelectColumn hook)"
+    }
+  ],
+  "components_needed": [
+    { "name": "AdminPage / AdminTable / AdminFilterRow", "path": "src/components/AdminPage" },
+    { "name": "FilterSelect (isMulti)", "path": "src/components/Filter" },
+    { "name": "FilterAutocomplete", "path": "src/components/Filter" },
+    { "name": "LinkButton", "path": "src/components/Link" },
+    { "name": "Label", "path": "src/components/Labels" },
+    { "name": "Checkbox", "path": "src/components/Checkbox" },
+    { "name": "AppLayout", "path": "src/components/Layout" }
+  ],
+  "image_observations": [
+    "Page header: Assessment dropdown (e.g. '2025 Active'), three date range period indicators — active one highlighted",
+    "User selection strip: avatar chips with name and role label (You, Subordinate) for switching whose data is viewed",
+    "Tab navigation: Annual targets | Self assessment | Feedback | Competency evaluation | Summary",
+    "Content card: 'Business & Personal Development Goals' with Download report (dark) and Send report to supervisor (green) buttons top right",
+    "Empty state: warning triangle icon inside light grey rounded panel",
+    "Edit button (outlined, small) at bottom left of card"
+  ]
+}
