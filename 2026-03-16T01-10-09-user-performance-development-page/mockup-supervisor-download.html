@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Download Reports — Supervisor</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+</head>
+<body>
+
+<h1>Download Reports — My Team</h1>
+
+<!-- Restricted types notice -->
+<div class="restricted-note">
+  🔒 &nbsp;Some report types are restricted by your organization's policy. Greyed-out types cannot be downloaded by supervisors or mentors.
+</div>
+
+<!-- Filters -->
+<div class="filters-bar">
+  <div class="filter-group">
+    <label>Assessment Year</label>
+    <select>
+      <option selected>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Relationship</label>
+    <select>
+      <option value="" selected>Subordinates &amp; Mentees</option>
+      <option>Subordinates only</option>
+      <option>Mentees only</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Search</label>
+    <div class="input-wrap">
+      <span class="input-icon">⌕</span>
+      <input type="search" placeholder="Name or position…" style="width:220px;">
+    </div>
+  </div>
+</div>
+
+<!-- Report type selection (Annual Targets restricted) -->
+<div class="report-types">
+  <span class="report-types-label">Report types:</span>
+  <label class="report-type-item disabled" title="Not available for supervisors/mentors">
+    <input type="checkbox" disabled> <span style="color:#aaa">Annual Targets</span>
+    &nbsp;<span class="chip chip-gray" style="font-size:10px">Restricted</span>
+  </label>
+  <label class="report-type-item">
+    <input type="checkbox" checked> Self Assessment
+  </label>
+  <label class="report-type-item">
+    <input type="checkbox" checked> Feedback
+  </label>
+  <label class="report-type-item disabled" title="Not available for supervisors/mentors">
+    <input type="checkbox" disabled> <span style="color:#aaa">Competency Evaluation</span>
+    &nbsp;<span class="chip chip-gray" style="font-size:10px">Restricted</span>
+  </label>
+</div>
+
+<!-- Action bar -->
+<div class="action-bar">
+  <span class="selection-info">4 users selected</span>
+  <div class="actions">
+    <button class="btn btn-ghost btn-sm">Clear selection</button>
+    <button class="btn btn-primary">
+      ⬇ Download ZIP &nbsp;<span class="badge" style="background:#fff;color:#4a90d9">4</span>
+    </button>
+  </div>
+</div>
+
+<!-- Users table -->
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:40px"><input type="checkbox" checked></th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Relationship</th>
+        <th>Self Assessment</th>
+        <th>Feedback</th>
+        <th style="width:100px">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar">MC</div>
+            <div><div class="user-name">Maryna Chernenko</div><div class="user-sub">Senior Analyst</div></div>
+          </div>
+        </td>
+        <td>Senior Analyst</td>
+        <td><span class="chip chip-blue">Subordinate</span></td>
+        <td><span class="chip chip-green">Submitted</span></td>
+        <td><span class="chip chip-green">3 received</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-purple">AS</div>
+            <div><div class="user-name">Anastasia Savchuk</div><div class="user-sub">Portfolio Manager</div></div>
+          </div>
+        </td>
+        <td>Portfolio Manager</td>
+        <td><span class="chip chip-blue">Subordinate</span></td>
+        <td><span class="chip chip-green">Submitted</span></td>
+        <td><span class="chip chip-orange">1 received</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-orange">AV</div>
+            <div><div class="user-name">Anastasia Vorobeva</div><div class="user-sub">Compliance Officer</div></div>
+          </div>
+        </td>
+        <td>Compliance Officer</td>
+        <td><span class="chip chip-blue">Mentee</span></td>
+        <td><span class="chip chip-gray">Not submitted</span></td>
+        <td><span class="chip chip-green">2 received</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-teal">SG</div>
+            <div><div class="user-name">Sergei Grechkin</div><div class="user-sub">Analyst</div></div>
+          </div>
+        </td>
+        <td>Analyst</td>
+        <td><span class="chip chip-blue">Subordinate &amp; Mentee</span></td>
+        <td><span class="chip chip-green">Submitted</span></td>
+        <td><span class="chip chip-green">4 received</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-indigo">TP</div>
+            <div><div class="user-name">Tatyana Petrusevich</div><div class="user-sub">Operations Manager</div></div>
+          </div>
+        </td>
+        <td>Operations Manager</td>
+        <td><span class="chip chip-blue">Mentee</span></td>
+        <td><span class="chip chip-gray">Not submitted</span></td>
+        <td><span class="chip chip-gray">None yet</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-green">YZ</div>
+            <div><div class="user-name">Yuliya Zubko</div><div class="user-sub">Associate</div></div>
+          </div>
+        </td>
+        <td>Associate</td>
+        <td><span class="chip chip-blue">Subordinate</span></td>
+        <td><span class="chip chip-green">Submitted</span></td>
+        <td><span class="chip chip-orange">1 received</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
