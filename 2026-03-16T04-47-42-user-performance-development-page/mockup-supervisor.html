@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supervisor Download</title>
+  <link rel="stylesheet" href="mockup-shared.css" />
+</head>
+<body>
+
+<h1>Performance Development Reports</h1>
+
+<!-- Period selector -->
+<div class="filter-bar" style="margin-bottom:20px;">
+  <div class="filter-group">
+    <label>Assessment</label>
+    <select>
+      <option>2025 — Active</option>
+      <option>2024</option>
+    </select>
+  </div>
+  <div class="checkboxes-group">
+    <label class="group-label">Include report types</label>
+    <div class="checkboxes-row">
+      <label class="checkbox-item"><input type="checkbox" checked /> Self Assessment</label>
+      <label class="checkbox-item"><input type="checkbox" checked /> Feedback</label>
+    </div>
+  </div>
+</div>
+
+<div class="info-note">
+  You are viewing reports for your subordinates and mentees. Report types available to you are determined by your organization's access settings.
+</div>
+
+<!-- Toolbar -->
+<div class="toolbar">
+  <div class="toolbar-left">
+    <button class="btn btn-primary">⬇ Download selected as ZIP (2)</button>
+    <span style="font-size:12px;color:#888;">2 users selected</span>
+  </div>
+</div>
+
+<div class="result-count">Showing 5 team members</div>
+
+<!-- Table — only Self Assessment and Feedback columns shown (Annual Targets and Competency Eval restricted) -->
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:36px;"><input type="checkbox" /></th>
+        <th>User</th>
+        <th>Relationship</th>
+        <th class="center">Self Assessment</th>
+        <th class="center">Feedback</th>
+        <th class="center">Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="selected">
+        <td><input type="checkbox" checked /></td>
+        <td><strong>Anastasia Savchuk</strong></td>
+        <td>Subordinate</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked /></td>
+        <td><strong>Sergei Grechkin</strong></td>
+        <td>Subordinate</td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><strong>Tatyana Petrusevich</strong></td>
+        <td>Subordinate</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><strong>Yuliya Zubko</strong></td>
+        <td>Subordinate</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><strong>Anastasia Vorobeva</strong></td>
+        <td>Mentee</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
