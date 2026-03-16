@@ -2,7 +2,7 @@
 
 Here is how user performance development page looks like.
 
-![%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.webp](https://trello.com/1/cards/69b37e0e99c97f1344b8614a/attachments/69b37e22deffdc5c2867b71c/previews/69b37e23deffdc5c2867b72d/download/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.webp)
+![%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.webp](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/01-user-prompt-image-01.png)
 
 We need a resonable way to download user's reports:
 
@@ -18,9 +18,9 @@ Can you suggest a page design (or several pages, for example one for admins and 
 A new set of pages for downloading performance development reports, with role-based access control. Admins can download all report types for any user in the system, with bulk ZIP download filtered by company. Supervisors and mentors see only their subordinates and mentees, and the report types available to them can be restricted through an access control configuration page.
 
 **Views:**
-- ![Admin Download Page](https://trello.com/1/cards/69b78e4d02becc5e9ff83c9f/attachments/69b78f4b7844fa25fb4fda3d/download/03-r1-mockup-admin-download.png)
-- ![Supervisor / Mentor Download Page](https://trello.com/1/cards/69b78e4d02becc5e9ff83c9f/attachments/69b78f50fb638555b26d5d54/download/03-r1-mockup-supervisor.png)
-- ![Report Access Control Page](https://trello.com/1/cards/69b78e4d02becc5e9ff83c9f/attachments/69b78f539f2e8ac1c3d26cb9/download/03-r1-mockup-access-control.png)
+- ![Admin Download Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-admin-download.png)
+- ![Supervisor / Mentor Download Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-supervisor.png)
+- ![Report Access Control Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-access-control.png)
 
 ### Layout Notes
 
