@@ -2,10 +2,14 @@
 
 A new set of pages for downloading performance development reports, with role-based access control. Admins can download all report types for any user in the system, with bulk ZIP download filtered by company. Supervisors and mentors see only their subordinates and mentees, and the report types available to them can be restricted through an access control configuration page.
 
-**Views:**
-- ![Admin Download Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-admin-download.png)
-- ![Supervisor / Mentor Download Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-supervisor.png)
-- ![Report Access Control Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-access-control.png)
+![Admin Download Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-admin-download.png)
+[Open mockup](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-admin-download.html)
+
+![Supervisor / Mentor Download Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-supervisor.png)
+[Open mockup](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-supervisor.html)
+
+![Report Access Control Page](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-access-control.png)
+[Open mockup](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-16T05-00-21-user-performance-development-page/03-r1-mockup-access-control.html)
 
 ### Layout Notes
 
