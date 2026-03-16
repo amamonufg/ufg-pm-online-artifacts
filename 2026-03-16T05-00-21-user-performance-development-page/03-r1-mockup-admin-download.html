@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Download</title>
+  <link rel="stylesheet" href="03-r1-mockup-shared.css" />
+</head>
+<body>
+
+<h1>Performance Development Reports</h1>
+
+<!-- Filter bar -->
+<div class="filter-bar">
+  <div class="filter-group">
+    <label>Assessment</label>
+    <select>
+      <option>2025 — Active</option>
+      <option>2024</option>
+      <option>2023</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Company</label>
+    <select multiple style="height:60px;min-width:200px;">
+      <option selected>Altus Capital</option>
+      <option selected>UFG Family Office</option>
+      <option>UFG Asset Management</option>
+      <option>UFG Private Equity</option>
+    </select>
+  </div>
+  <div class="checkboxes-group">
+    <label class="group-label">Include report types</label>
+    <div class="checkboxes-row">
+      <label class="checkbox-item"><input type="checkbox" checked /> Annual Targets</label>
+      <label class="checkbox-item"><input type="checkbox" checked /> Self Assessment</label>
+      <label class="checkbox-item"><input type="checkbox" checked /> Feedback</label>
+      <label class="checkbox-item"><input type="checkbox" checked /> Competency Evaluation</label>
+    </div>
+  </div>
+</div>
+
+<!-- Toolbar -->
+<div class="toolbar">
+  <div class="toolbar-left">
+    <button class="btn btn-primary">⬇ Download selected as ZIP (3)</button>
+    <span style="font-size:12px;color:#888;">3 users selected</span>
+  </div>
+  <div class="toolbar-right">
+    <a href="#" class="btn btn-light btn-sm">⚙ Configure access</a>
+  </div>
+</div>
+
+<div class="result-count">Showing 8 users</div>
+
+<!-- Table -->
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:36px;"><input type="checkbox" /></th>
+        <th>User</th>
+        <th>Company</th>
+        <th class="center">Annual Targets</th>
+        <th class="center">Self Assessment</th>
+        <th class="center">Feedback</th>
+        <th class="center">Competency Eval.</th>
+        <th class="center">Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="selected">
+        <td><input type="checkbox" checked /></td>
+        <td><strong>Anastasia Savchuk</strong></td>
+        <td>Altus Capital</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked /></td>
+        <td><strong>Sergei Grechkin</strong></td>
+        <td>Altus Capital</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked /></td>
+        <td><strong>Tatyana Petrusevich</strong></td>
+        <td>UFG Family Office</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><strong>Yuliya Zubko</strong></td>
+        <td>UFG Family Office</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><strong>Dmitry Klenov</strong></td>
+        <td>Altus Capital</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><strong>Anastasia Vorobeva</strong></td>
+        <td>UFG Asset Management</td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><strong>Maryna Chernenko</strong></td>
+        <td>UFG Asset Management</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" /></td>
+        <td><strong>Ivan Sokolov</strong></td>
+        <td>UFG Private Equity</td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><span class="badge badge-unavailable">— Not submitted</span></td>
+        <td class="center"><span class="badge badge-available">✓ Available</span></td>
+        <td class="center"><button class="btn btn-secondary btn-sm">⬇</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
