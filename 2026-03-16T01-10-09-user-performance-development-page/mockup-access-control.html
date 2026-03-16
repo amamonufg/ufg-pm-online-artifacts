@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Report Access Control</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+  <style>
+    .ac-header { margin-bottom: 24px; }
+    .ac-header p { color: #666; font-size: 13px; margin-top: 6px; line-height: 1.6; max-width: 720px; }
+    .save-bar {
+      display: flex; align-items: center; justify-content: flex-end; gap: 12px;
+      padding: 14px 20px; background: #f9f9f9; border: 1px solid #eee;
+      border-radius: 6px; margin-top: 24px;
+    }
+    .save-bar .saved-note { font-size: 12px; color: #38a169; }
+    .report-col-head { text-align: center !important; }
+    .report-col-head .col-label { font-size: 12px; font-weight: 600; color: #333; }
+    .report-col-head .col-sub   { font-size: 11px; color: #888; font-weight: 400; }
+    .section-head td {
+      background: #f0f6fd; font-size: 12px; font-weight: 600;
+      color: #3a7bc8; padding: 8px 16px; border-bottom: 1px solid #dce8f5;
+    }
+    .toggle-cell { text-align: center; vertical-align: middle; }
+  </style>
+</head>
+<body>
+
+<div class="ac-header">
+  <h1>Report Access Control</h1>
+  <p>
+    Control which report types supervisors and mentors are allowed to download for their subordinates and mentees.
+    Changes apply to all users with those roles across all companies.
+    Admins always have access to all report types regardless of these settings.
+  </p>
+</div>
+
+<div class="info-note">
+  <span class="icon">ℹ</span>
+  <span>
+    Enabling a report type here allows the role to <strong>download</strong> it — it does not affect who can <strong>view</strong> reports within the Performance Development module.
+  </span>
+</div>
+
+<div class="card" style="padding:0;overflow:hidden;">
+  <table class="ac-table">
+    <thead>
+      <tr>
+        <th style="width:200px">Role</th>
+        <th class="report-col-head">
+          <div class="col-label">Annual Targets</div>
+        </th>
+        <th class="report-col-head">
+          <div class="col-label">Self Assessment</div>
+        </th>
+        <th class="report-col-head">
+          <div class="col-label">Feedback</div>
+        </th>
+        <th class="report-col-head">
+          <div class="col-label">Competency Evaluation</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="section-head">
+        <td colspan="5">Supervisors</td>
+      </tr>
+      <tr>
+        <td class="role-col">Direct Supervisor</td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </td>
+      </tr>
+      <tr>
+        <td class="role-col">Indirect Supervisor</td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </td>
+      </tr>
+
+      <tr class="section-head">
+        <td colspan="5">Mentors</td>
+      </tr>
+      <tr>
+        <td class="role-col">Mentor</td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+        </td>
+        <td class="toggle-cell">
+          <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="save-bar">
+  <span class="saved-note">✓ Settings saved automatically</span>
+  <button class="btn btn-primary">Save changes</button>
+</div>
+
+</body>
+</html>
