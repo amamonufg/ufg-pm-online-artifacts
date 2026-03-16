@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Download Reports — Admin</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+  <style>
+    .select-all-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px; background: #fafafa; border: 1px solid #eee;
+      border-radius: 6px; margin-bottom: 12px;
+    }
+    .select-all-bar span { font-size: 13px; color: #555; }
+  </style>
+</head>
+<body>
+
+<h1>Download Reports</h1>
+
+<!-- Filters -->
+<div class="filters-bar">
+  <div class="filter-group">
+    <label>Assessment Year</label>
+    <select>
+      <option selected>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Company</label>
+    <select>
+      <option value="">All companies</option>
+      <option selected>Altus Capital</option>
+      <option>Family Office</option>
+      <option>UFG Asset Management</option>
+      <option>UFG Wealth Management</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Department</label>
+    <select>
+      <option value="">All departments</option>
+      <option>Front Office</option>
+      <option>Operations</option>
+      <option>Compliance</option>
+      <option>Technology</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Search</label>
+    <div class="input-wrap">
+      <span class="input-icon">⌕</span>
+      <input type="search" placeholder="Name or position…" style="width:220px;">
+    </div>
+  </div>
+  <button class="btn btn-ghost btn-sm" style="align-self:flex-end">Reset filters</button>
+</div>
+
+<!-- Report type selection -->
+<div class="report-types">
+  <span class="report-types-label">Report types:</span>
+  <label class="report-type-item">
+    <input type="checkbox" checked> Annual Targets
+  </label>
+  <label class="report-type-item">
+    <input type="checkbox" checked> Self Assessment
+  </label>
+  <label class="report-type-item">
+    <input type="checkbox" checked> Feedback
+  </label>
+  <label class="report-type-item">
+    <input type="checkbox"> Competency Evaluation
+  </label>
+</div>
+
+<!-- Action bar -->
+<div class="action-bar">
+  <span class="selection-info">12 users selected</span>
+  <div class="actions">
+    <button class="btn btn-ghost btn-sm">Clear selection</button>
+    <button class="btn btn-primary">
+      ⬇ Download ZIP &nbsp;<span class="badge" style="background:#fff;color:#4a90d9">12</span>
+    </button>
+  </div>
+</div>
+
+<!-- Select all row -->
+<div class="select-all-bar">
+  <label class="cb-wrap">
+    <input type="checkbox" checked>
+    <span>Select all on this page (14)</span>
+  </label>
+  <span style="color:#bbb">|</span>
+  <a href="#" style="color:#4a90d9;font-size:13px;text-decoration:none">Select all 47 users matching filters</a>
+</div>
+
+<!-- Users table -->
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:40px"></th>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Position</th>
+        <th>Supervisor</th>
+        <th>Mentor</th>
+        <th>Status</th>
+        <th style="width:100px">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar">MC</div>
+            <div><div class="user-name">Maryna Chernenko</div><div class="user-sub">Senior Analyst</div></div>
+          </div>
+        </td>
+        <td>Altus Capital</td>
+        <td>Senior Analyst</td>
+        <td>Dmitry Klenov</td>
+        <td>Anna Sorokina</td>
+        <td><span class="chip chip-green">Active</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-purple">AS</div>
+            <div><div class="user-name">Anastasia Savchuk</div><div class="user-sub">Portfolio Manager</div></div>
+          </div>
+        </td>
+        <td>Altus Capital</td>
+        <td>Portfolio Manager</td>
+        <td>Dmitry Klenov</td>
+        <td>—</td>
+        <td><span class="chip chip-green">Active</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-orange">AV</div>
+            <div><div class="user-name">Anastasia Vorobeva</div><div class="user-sub">Compliance Officer</div></div>
+          </div>
+        </td>
+        <td>Altus Capital</td>
+        <td>Compliance Officer</td>
+        <td>Igor Petrov</td>
+        <td>Dmitry Klenov</td>
+        <td><span class="chip chip-green">Active</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-teal">SG</div>
+            <div><div class="user-name">Sergei Grechkin</div><div class="user-sub">Analyst</div></div>
+          </div>
+        </td>
+        <td>Altus Capital</td>
+        <td>Analyst</td>
+        <td>Dmitry Klenov</td>
+        <td>Maryna Chernenko</td>
+        <td><span class="chip chip-green">Active</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-indigo">TP</div>
+            <div><div class="user-name">Tatyana Petrusevich</div><div class="user-sub">Operations Manager</div></div>
+          </div>
+        </td>
+        <td>Altus Capital</td>
+        <td>Operations Manager</td>
+        <td>Igor Petrov</td>
+        <td>—</td>
+        <td><span class="chip chip-green">Active</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-green">YZ</div>
+            <div><div class="user-name">Yuliya Zubko</div><div class="user-sub">Associate</div></div>
+          </div>
+        </td>
+        <td>Altus Capital</td>
+        <td>Associate</td>
+        <td>Maryna Chernenko</td>
+        <td>Anastasia Savchuk</td>
+        <td><span class="chip chip-green">Active</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr class="selected">
+        <td><input type="checkbox" checked></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar av-red">NK</div>
+            <div><div class="user-name">Nikolai Kuznetsov</div><div class="user-sub">Risk Manager</div></div>
+          </div>
+        </td>
+        <td>Altus Capital</td>
+        <td>Risk Manager</td>
+        <td>Dmitry Klenov</td>
+        <td>Anna Sorokina</td>
+        <td><span class="chip chip-orange">On leave</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox"></td>
+        <td>
+          <div class="user-cell">
+            <div class="avatar">DM</div>
+            <div><div class="user-name">Daria Morozova</div><div class="user-sub">Junior Analyst</div></div>
+          </div>
+        </td>
+        <td>Altus Capital</td>
+        <td>Junior Analyst</td>
+        <td>Anastasia Savchuk</td>
+        <td>—</td>
+        <td><span class="chip chip-gray">Inactive</span></td>
+        <td><button class="btn btn-ghost btn-sm">⬇ Single</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="pagination">
+  <button class="page-btn">‹</button>
+  <button class="page-btn active">1</button>
+  <button class="page-btn">2</button>
+  <button class="page-btn">3</button>
+  <button class="page-btn">4</button>
+  <button class="page-btn">›</button>
+  <span class="page-info">47 users total</span>
+</div>
+
+</body>
+</html>
