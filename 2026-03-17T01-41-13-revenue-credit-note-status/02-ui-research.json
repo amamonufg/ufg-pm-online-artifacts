@@ -1,0 +1,63 @@
+{
+  "module": "Revenue Credit Notes Status Block",
+  "reference_page": {
+    "path": "UFGPM.Web.UI/src/pages/invoice/containers/InvoicePage.tsx",
+    "layout_type": "Modal with EntityModal wrapper and status display via AdminModalTitle",
+    "components_used": [
+      "AdminModalTitle",
+      "EntityModal",
+      "Label (for status badges)",
+      "StatusLine (for invoice status progression)",
+      "ConfirmButton (for rollback/cancel actions)"
+    ],
+    "patterns_noted": [
+      "Status badges displayed in modal header via AdminModalTitle component",
+      "Read-only badge shown when editing not allowed",
+      "Status field uses InvoiceStatusField widget which renders StatusLine component",
+      "Action buttons (Approve, Allocate, Rollback, Cancel) grouped with d-flex and gap utilities"
+    ]
+  },
+  "similar_patterns": [
+    {
+      "description": "Provision status UX pattern - Shows StatusLine with Draft/Provision states and action buttons (Provision, Rollback, Cancel)",
+      "found_at": "UFGPM.Web.UI/src/pages/invoice/components/InvoiceStatusField.tsx (lines 215-279)"
+    },
+    {
+      "description": "StatusLine component - Renders visual status progression with circular indicators and connecting lines",
+      "found_at": "UFGPM.Web.UI/src/components/StatusLine/StatusLine.tsx"
+    },
+    {
+      "description": "Label/Badge component - Renders colored status badges with light/dark variants",
+      "found_at": "UFGPM.Web.UI/src/components/Labels/Label.tsx"
+    }
+  ],
+  "components_needed": [
+    {
+      "name": "StatusLine",
+      "path": "UFGPM.Web.UI/src/components/StatusLine/StatusLine.tsx",
+      "purpose": "Display credit note status progression (Draft → Approved with optional Cancelled state)"
+    },
+    {
+      "name": "Label",
+      "path": "UFGPM.Web.UI/src/components/Labels/Label.tsx",
+      "purpose": "Render status badges for Approved and Cancelled states"
+    },
+    {
+      "name": "ConfirmButton",
+      "path": "UFGPM.Web.UI/src/components/Button/ConfirmButton.tsx",
+      "purpose": "Action buttons for Rollback and Cancel operations with confirmation dialogs"
+    },
+    {
+      "name": "Button",
+      "path": "UFGPM.Web.UI/src/components/Button",
+      "purpose": "Standard action buttons for status changes"
+    }
+  ],
+  "image_observations": [
+    "Image 1 shows single 'APPROVED' status badge (red/pink color) positioned at top right of modal header",
+    "Image 2 shows two status badges: 'APPROVED' (yellow/gold) and 'CANCELLED' (red/pink) side by side at top right",
+    "Both images show badges as inline elements within the modal title/header area",
+    "Status badges appear to use Label component with different color variants",
+    "Badges are compact, pill-shaped elements with text centered inside"
+  ]
+}
