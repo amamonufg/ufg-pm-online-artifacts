@@ -80,3 +80,26 @@ On the form page, a new Correspondent Account Number field is added, and all fie
 - The Account Status section is visually separated from the banking fields by a section divider line and a bold section label. Radio options are listed vertically. The conditional sub-form (date + notes) slides in below the selected radio option, indented slightly to associate it with the selection.
 - The conditional sub-form fields appear inline — no page reload or modal swap. When "Active" is selected, no sub-form is shown.
 - Save and Cancel buttons are right-aligned at the bottom of the modal footer.
+
+---
+
+## Revision 2
+
+The account status block on the form page is redesigned from a "set current state" picker to an auditable status history log.
+
+The account's valid states are Active, Suspended, and Terminated. The current state is derived automatically from the most recent history entry — no entries means Active. Three event types can be logged: Suspended (→ Suspended), Block Removed (→ Active implicitly), and Terminated (→ Terminated). Each event captures a date and free-text notes. Entries can be edited inline. New accounts start as Active with no history entries.
+
+The section header shows the derived current status as a badge alongside the "Account Status History" label. The history list displays entries newest-first, each showing an event badge, date, notes, and an edit icon. Clicking edit expands an inline form within that row (Event Type, Date, Notes, Save/Cancel). A dashed "+ Add Status Change" button below the list opens an identical inline form to append a new event.
+
+![Form Page — Revision 2](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-17T00-45-00-company-bank-accounts-page/03-r2-mockup-form.png)
+[Open mockup](https://raw.githubusercontent.com/amamonufg/ufg-pm-online-artifacts/main/2026-03-17T00-45-00-company-bank-accounts-page/03-r2-mockup-form.html)
+
+## Layout Notes
+
+- The list page is unchanged from Revision 1.
+- The section header is a two-column row: "Account Status History" label on the left, derived current-status badge on the right.
+- The history list is a bordered card, one row per event, newest first. Each row: event badge + date, notes text below, edit icon on the right.
+- Clicking edit expands an inline sub-form inside that row. Only one entry editable at a time.
+- The "+ Add Status Change" dashed button sits below the history list; clicking it appends an inline add-form.
+- All status history interactions are inline — no nested modals.
+- Modal footer Save/Cancel apply to account fields only; history entries save independently.
