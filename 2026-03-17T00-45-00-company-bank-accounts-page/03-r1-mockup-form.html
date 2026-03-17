@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1280">
+  <!-- Screenshot override: remove modal height constraint so full content renders -->
+
   <title>Edit Bank Account – Form Mockup</title>
   <link rel="stylesheet" href="03-r1-mockup-shared.css">
   <style>
@@ -22,8 +24,14 @@
 
     .modal {
       position: relative;
-      max-height: none;
+      max-height: none !important;
+      overflow: visible !important;
       width: 100%;
+    }
+
+    .modal-body {
+      overflow-y: visible !important;
+      overflow: visible !important;
     }
   </style>
 </head>
