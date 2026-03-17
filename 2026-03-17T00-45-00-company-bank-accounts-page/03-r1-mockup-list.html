@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Internal Company Bank Accounts</title>
+  <link rel="stylesheet" href="03-r1-mockup-shared.css">
+  <style>
+    body { padding: 28px 32px; }
+    th:nth-child(7), td:nth-child(7),
+    th:nth-child(8), td:nth-child(8) {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      letter-spacing: 0.01em;
+    }
+    .company-name { font-weight: 600; }
+    .company-code { color: #888; font-size: 12px; font-family: monospace; }
+    .acct-number  { color: #555; }
+    .iban-cell    { color: #555; }
+  </style>
+</head>
+<body>
+
+  <div class="page-title-row">
+    <h1>Internal Company Bank Accounts</h1>
+    <button class="btn btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      Add Account
+    </button>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-group">
+      <input type="text" class="search-input" placeholder="Search accounts…" value="">
+    </div>
+
+    <div class="filter-group">
+      <label>Bank Name</label>
+      <select class="filter-select">
+        <option value="">All Banks</option>
+        <option>Sberbank</option>
+        <option>VTB Bank</option>
+        <option>Alfa-Bank</option>
+        <option>Raiffeisen Bank</option>
+        <option>Tinkoff Bank</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Company</label>
+      <select class="filter-select">
+        <option value="">All Companies</option>
+        <option>UFG Asset Management</option>
+        <option>UFG Private Equity</option>
+        <option>UFG Wealth Management</option>
+        <option>UFG Real Estate</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Currency</label>
+      <select class="filter-select" style="min-width:110px">
+        <option value="">All</option>
+        <option>RUB</option>
+        <option>USD</option>
+        <option>EUR</option>
+        <option>GBP</option>
+      </select>
+    </div>
+
+    <div class="filter-spacer"></div>
+
+    <div class="filter-group">
+      <label>Status</label>
+      <div class="radio-group">
+        <label><input type="radio" name="status" checked> All</label>
+        <label><input type="radio" name="status"> Active</label>
+        <label><input type="radio" name="status"> Suspended</label>
+        <label><input type="radio" name="status"> Terminated</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Company Code</th>
+          <th>Bank Name</th>
+          <th>Account Name</th>
+          <th>Account Short Code</th>
+          <th>Account Currency</th>
+          <th>Account Number</th>
+          <th>IBAN</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="company-name">UFG Asset Management</td>
+          <td class="company-code">UFG-AM</td>
+          <td>Sberbank</td>
+          <td>Main Operating Account</td>
+          <td>AM-SBR-RUB-01</td>
+          <td>RUB</td>
+          <td class="acct-number">40702810400000012345</td>
+          <td class="iban-cell truncate" title="RU49 0481 2000 0000 4070 2810 4000">RU49 0481 2000 0000 4070 2810 4000</td>
+          <td><span class="badge badge-active">Active</span></td>
+          <td>
+            <div class="actions">
+              <button class="btn-icon" title="Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+              <button class="btn-icon delete" title="Delete">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="company-name">UFG Asset Management</td>
+          <td class="company-code">UFG-AM</td>
+          <td>VTB Bank</td>
+          <td>USD Settlement Account</td>
+          <td>AM-VTB-USD-01</td>
+          <td>USD</td>
+          <td class="acct-number">40702840100000056789</td>
+          <td class="iban-cell truncate" title="RU18 0481 4000 0000 4070 2840 1000">RU18 0481 4000 0000 4070 2840 1000</td>
+          <td><span class="badge badge-suspended">Suspended</span></td>
+          <td>
+            <div class="actions">
+              <button class="btn-icon" title="Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+              <button class="btn-icon delete" title="Delete">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="company-name">UFG Private Equity</td>
+          <td class="company-code">UFG-PE</td>
+          <td>Alfa-Bank</td>
+          <td>EUR Correspondent Account</td>
+          <td>PE-ALF-EUR-01</td>
+          <td>EUR</td>
+          <td class="acct-number">40702978500000078901</td>
+          <td class="iban-cell truncate" title="RU62 0441 4000 0000 4070 2978 5000">RU62 0441 4000 0000 4070 2978 5000</td>
+          <td><span class="badge badge-active">Active</span></td>
+          <td>
+            <div class="actions">
+              <button class="btn-icon" title="Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+              <button class="btn-icon delete" title="Delete">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="company-name">UFG Wealth Management</td>
+          <td class="company-code">UFG-WM</td>
+          <td>Raiffeisen Bank</td>
+          <td>Client Escrow Account</td>
+          <td>WM-RFB-RUB-01</td>
+          <td>RUB</td>
+          <td class="acct-number">40702810300000034567</td>
+          <td class="iban-cell truncate" title="RU77 0443 2100 0000 4070 2810 3000">RU77 0443 2100 0000 4070 2810 3000</td>
+          <td><span class="badge badge-terminated">Terminated</span></td>
+          <td>
+            <div class="actions">
+              <button class="btn-icon" title="Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+              <button class="btn-icon delete" title="Delete">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="company-name">UFG Real Estate</td>
+          <td class="company-code">UFG-RE</td>
+          <td>Tinkoff Bank</td>
+          <td>Project Payments Account</td>
+          <td>RE-TNK-RUB-02</td>
+          <td>RUB</td>
+          <td class="acct-number">40702810700000091234</td>
+          <td class="iban-cell truncate" title="RU33 0452 7000 0000 4070 2810 7000">RU33 0452 7000 0000 4070 2810 7000</td>
+          <td><span class="badge badge-active">Active</span></td>
+          <td>
+            <div class="actions">
+              <button class="btn-icon" title="Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+              <button class="btn-icon delete" title="Delete">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="company-name">UFG Private Equity</td>
+          <td class="company-code">UFG-PE</td>
+          <td>Sberbank</td>
+          <td>Payroll Account</td>
+          <td>PE-SBR-RUB-02</td>
+          <td>RUB</td>
+          <td class="acct-number">40702810600000045678</td>
+          <td class="iban-cell truncate" title="RU55 0481 2000 0000 4070 2810 6000">RU55 0481 2000 0000 4070 2810 6000</td>
+          <td><span class="badge badge-active">Active</span></td>
+          <td>
+            <div class="actions">
+              <button class="btn-icon" title="Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </button>
+              <button class="btn-icon delete" title="Delete">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <span>Showing <strong>1–20</strong> of <strong>38</strong> accounts</span>
+      <div class="pagination-pages">
+        <button class="page-btn">&#8249;</button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">&#8250;</button>
+      </div>
+      <span style="color:#aaa; font-size:12px;">20 per page</span>
+    </div>
+  </div>
+
+</body>
+</html>
