@@ -1,0 +1,54 @@
+{
+  "module": "treasury/companyBank",
+  "reference_page": {
+    "path": "src/pages/treasury/companyBank/containers/CompanyBankPage.tsx",
+    "layout_type": "AdminPage with table and modal form",
+    "components_used": [
+      "src/components/AdminPage",
+      "src/components/Labels/Label.tsx",
+      "src/components/Form/Widgets",
+      "src/components/Table/types.ts",
+      "src/components/Filter"
+    ],
+    "patterns_noted": [
+      "TABLE_CONFIG array with TableColumn<T>[] defining columns with Header and Cell properties",
+      "FORM_CONFIG array with FormFieldConfig<T>[] defining form fields with key, label, widget, and validate",
+      "FILTER_CONFIG object with filter definitions for search, select dropdowns, and radio buttons",
+      "formAutocomplete widget for entity references (company, currency)",
+      "formText, formTextarea, formCheckbox widgets",
+      "Label component with variant (success/danger) for status display",
+      "Custom Cell renderer using props.row.original and props.value",
+      "toSubmitBody function to transform form data before submission",
+      "formatModalTitle function for modal headers",
+      "DEFAULT_FILTER object with initial filter values",
+      "DEFAULT_SORT array for initial table sorting"
+    ]
+  },
+  "similar_patterns": [
+    {
+      "description": "VendorBank page with nearly identical structure, already includes correspondent account fields (corrAccountNumber, corrBankName, corrBankSwift) — primary reference for adding correspondent account to CompanyBank form",
+      "found_at": "src/pages/treasury/vendorBank/containers/VendorBankPage.tsx"
+    },
+    {
+      "description": "BudgetLineCategory page uses FilterRadioButtons for multi-option filtering and BooleanTableCell for status display — reference for multi-state status filter",
+      "found_at": "src/pages/admin/budgetLineCategory/containers/BudgetLineCategoryPage.tsx"
+    }
+  ],
+  "components_needed": [
+    { "name": "AdminPage", "path": "src/components/AdminPage" },
+    { "name": "AdminTable", "path": "src/components/AdminPage" },
+    { "name": "AdminForm", "path": "src/components/AdminPage" },
+    { "name": "Label", "path": "src/components/Labels/Label.tsx" },
+    { "name": "formText", "path": "src/components/Form/Widgets" },
+    { "name": "formTextarea", "path": "src/components/Form/Widgets" },
+    { "name": "formSelect", "path": "src/components/Form/Widgets/FormSelect.tsx" },
+    { "name": "formAutocomplete", "path": "src/components/Form/Widgets" },
+    { "name": "RadioButtons", "path": "src/components/Radio" },
+    { "name": "FilterRadioButtons", "path": "src/components/Filter" },
+    { "name": "Table, TableColumn", "path": "src/components/Table/types.ts" }
+  ],
+  "image_observations": [
+    "Image 1 (LIST PAGE): Header reads 'Company Bank Accounts'. Columns: Short Code, Account Name, Bank Name, Currency, IBAN, Company, Status, Actions. Status uses Label component (green=Active, red=Inactive). Company column shows company name with ID in parentheses. Filters: search box, Bank Name dropdown, Company ID dropdown, Account Currency dropdown, Status radio buttons (All/Active/Inactive). Pagination shows 20 of 525 records. Actions per row: edit (pencil) and delete icons. Account Number column is absent and must be added.",
+    "Image 2 (FORM PAGE): Modal form layout. Fields visible: Short Code, Account Name, Bank Name, Company (autocomplete), Account Currency (autocomplete), Address (textarea), SWIFT, Account Number. Single-column layout within modal. Save/Close buttons at bottom. Active flag shown as checkbox. Correspondent account field is absent and must be added. Field order needs resequencing per requirements."
+  ]
+}
