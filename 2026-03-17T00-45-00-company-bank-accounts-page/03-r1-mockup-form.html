@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Edit Bank Account – Form Mockup</title>
+  <link rel="stylesheet" href="03-r1-mockup-shared.css">
+  <style>
+    body {
+      background: #e8edf5;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .demo-modal-wrap {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .modal {
+      position: relative;
+      max-height: none;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-modal-wrap">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Edit Bank Account</h2>
+        <button class="modal-close" title="Close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- 1. Company -->
+        <div class="form-field">
+          <label>Company</label>
+          <div class="autocomplete-wrapper">
+            <input type="text" value="UFG Asset Management">
+            <span class="autocomplete-arrow">&#9660;</span>
+          </div>
+        </div>
+
+        <!-- 2. Bank Name -->
+        <div class="form-field">
+          <label>Bank Name</label>
+          <input type="text" value="VTB Bank">
+        </div>
+
+        <!-- 3. Account Name -->
+        <div class="form-field">
+          <label>Account Name</label>
+          <input type="text" value="USD Settlement Account">
+        </div>
+
+        <!-- 4. Short Code -->
+        <div class="form-field">
+          <label>Short Code</label>
+          <input type="text" value="AM-VTB-USD-01">
+        </div>
+
+        <!-- 5. Account Currency -->
+        <div class="form-field">
+          <label>Account Currency</label>
+          <div class="autocomplete-wrapper">
+            <input type="text" value="USD – US Dollar">
+            <span class="autocomplete-arrow">&#9660;</span>
+          </div>
+        </div>
+
+        <!-- 6. Account Number -->
+        <div class="form-field">
+          <label>Account Number</label>
+          <input type="text" value="40702840100000056789">
+        </div>
+
+        <!-- 7. Correspondent Account Number -->
+        <div class="form-field">
+          <label>Correspondent Account Number</label>
+          <input type="text" value="30101810400000000225">
+        </div>
+
+        <!-- 8. IBAN -->
+        <div class="form-field">
+          <label>IBAN</label>
+          <input type="text" value="RU18 0481 4000 0000 4070 2840 1000">
+        </div>
+
+        <!-- 9. SWIFT -->
+        <div class="form-field">
+          <label>SWIFT</label>
+          <input type="text" value="VTBRRUMM">
+        </div>
+
+        <!-- 10. Address -->
+        <div class="form-field">
+          <label>Address</label>
+          <textarea>29 Degtyarny Lane, Moscow, Russia, 127015</textarea>
+        </div>
+
+        <!-- Account Status Section -->
+        <hr class="section-divider">
+        <div class="section-label">Account Status</div>
+
+        <div class="status-radio-list">
+
+          <!-- Option 1: Active -->
+          <div class="status-radio-item">
+            <label class="status-radio-label">
+              <input type="radio" name="acct-status" value="active">
+              <span class="status-dot status-dot-active"></span>
+              Active
+            </label>
+          </div>
+
+          <!-- Option 2: Suspended — SELECTED, shows sub-form -->
+          <div class="status-radio-item">
+            <label class="status-radio-label" style="background:#fffbf0; border-radius:6px;">
+              <input type="radio" name="acct-status" value="suspended" checked>
+              <span class="status-dot status-dot-suspended"></span>
+              Suspended / Blocked
+            </label>
+            <!-- Conditional sub-form -->
+            <div class="status-sub-form">
+              <div class="form-field">
+                <label>Block Date</label>
+                <input type="date" value="2026-01-15">
+              </div>
+              <div class="form-field">
+                <label>Notes</label>
+                <textarea style="min-height:60px;">Account suspended pending regulatory compliance review. Await confirmation from compliance officer before reinstatement.</textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 3: Terminated -->
+          <div class="status-radio-item">
+            <label class="status-radio-label">
+              <input type="radio" name="acct-status" value="terminated">
+              <span class="status-dot status-dot-terminated"></span>
+              Terminated
+            </label>
+          </div>
+
+          <!-- Option 4: Block Removed -->
+          <div class="status-radio-item">
+            <label class="status-radio-label">
+              <input type="radio" name="acct-status" value="block-removed">
+              <span class="status-dot status-dot-removed"></span>
+              Block Removed
+            </label>
+          </div>
+
+        </div>
+        <!-- /status-radio-list -->
+
+      </div>
+      <!-- /modal-body -->
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const radios = document.querySelectorAll('input[name="acct-status"]');
+
+    function buildSubForm(dateLabel, dateValue, notesPlaceholder) {
+      const wrap = document.createElement('div');
+      wrap.className = 'status-sub-form';
+      wrap.style.display = 'none';
+      wrap.innerHTML = `
+        <div class="form-field">
+          <label>${dateLabel}</label>
+          <input type="date" value="${dateValue}">
+        </div>
+        <div class="form-field">
+          <label>Notes</label>
+          <textarea style="min-height:60px;" placeholder="${notesPlaceholder}"></textarea>
+        </div>`;
+      return wrap;
+    }
+
+    const terminatedItem = document.querySelectorAll('.status-radio-item')[2];
+    const terminatedSubForm = buildSubForm('Termination Date', '2026-03-01', 'Reason for account termination…');
+    terminatedItem.appendChild(terminatedSubForm);
+
+    const removedItem = document.querySelectorAll('.status-radio-item')[3];
+    const removedSubForm = buildSubForm('Removal Date', '2026-03-10', 'Notes on block removal…');
+    removedItem.appendChild(removedSubForm);
+
+    const allSubForms = [
+      null,
+      document.querySelector('.status-sub-form'),
+      terminatedSubForm,
+      removedSubForm
+    ];
+
+    radios.forEach((radio, idx) => {
+      radio.addEventListener('change', () => {
+        allSubForms.forEach((sf) => {
+          if (sf) sf.style.display = 'none';
+        });
+        if (allSubForms[idx]) {
+          allSubForms[idx].style.display = 'flex';
+          allSubForms[idx].style.flexDirection = 'column';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
