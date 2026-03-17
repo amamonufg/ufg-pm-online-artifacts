@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1600">
+  <title>Credit Note – Approved State</title>
+  <link rel="stylesheet" href="03-r1-mockup-shared.css">
+  <style>
+    /* Screenshot capture override */
+    .modal { max-height: none !important; overflow: visible !important; }
+    .modal-body { overflow-y: visible !important; }
+    /* Icon font fallback using unicode symbols */
+    .ico-undo::before    { content: '↩'; }
+    .ico-close::before   { content: '✕'; }
+    .ico-save::before    { content: '💾'; }
+    .ico-back::before    { content: '←'; }
+    .ico-check::before   { content: '✓'; }
+  </style>
+</head>
+<body>
+  <div class="modal-overlay">
+    <div class="modal">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2 class="modal-title">
+          Credit Note
+          <span class="text-muted fw-semibold" style="font-size:15px; font-weight:400;">#CN-2024-0847</span>
+        </h2>
+        <div class="modal-header-badges">
+          <span class="label label-approved">Approved</span>
+        </div>
+        <button class="modal-close" title="Close">✕</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+
+        <!-- ════════════════════════════════════════
+             STATUS BLOCK — Provision-style UX
+             (NEW: replaces old single badge approach)
+             ════════════════════════════════════════ -->
+        <div class="status-block">
+
+          <!-- Horizontal progress line: Draft → Approved -->
+          <div class="statusline">
+
+            <!-- Step 1: Draft (completed) -->
+            <div class="statusline-step complete">
+              <div class="statusline-circle"></div>
+              <div class="statusline-label">Draft</div>
+            </div>
+
+            <!-- Connector: Draft → Approved (completed) -->
+            <div class="statusline-connector complete"></div>
+
+            <!-- Step 2: Approved (active / current) -->
+            <div class="statusline-step active">
+              <div class="statusline-circle"></div>
+              <div class="statusline-label">Approved</div>
+            </div>
+
+          </div>
+          <!-- End statusline -->
+
+          <!-- Action buttons row -->
+          <div class="status-actions">
+
+            <!-- Roll back: demotes Approved → Draft, requires confirmation -->
+            <button class="btn btn-sm btn-warning" title="Roll back to Draft — requires confirmation">
+              <span class="ico-undo btn-icon"></span>
+              Roll back
+            </button>
+
+            <!-- Cancel: terminates the credit note, requires confirmation -->
+            <button class="btn btn-sm btn-danger" title="Cancel this credit note — requires confirmation">
+              <span class="ico-close btn-icon"></span>
+              Cancel
+            </button>
+
+          </div>
+          <!-- End status-actions -->
+
+        </div>
+        <!-- End status-block -->
+
+        <hr class="divider">
+
+        <!-- ─── Credit Note Form Fields ─── -->
+
+        <!-- Row 1: Credit note number, related invoice, internal company -->
+        <div class="form-row form-row-3">
+          <div class="form-field">
+            <label class="form-label">Credit Note Number</label>
+            <input class="form-control" type="text" value="CN-UFG-2024-0847" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Related Invoice</label>
+            <input class="form-control" type="text" value="INV-UFG-2024-1203" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Internal Company</label>
+            <input class="form-control" type="text" value="UFG Advisory Ltd" readonly>
+          </div>
+        </div>
+
+        <!-- Row 2: Client, project, business code -->
+        <div class="form-row form-row-3">
+          <div class="form-field">
+            <label class="form-label">Client</label>
+            <input class="form-control" type="text" value="Meridian Capital Partners" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Project</label>
+            <input class="form-control" type="text" value="M&amp;A Advisory – Series C (2024)" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Business Code</label>
+            <input class="form-control" type="text" value="ADV-CORP">
+          </div>
+        </div>
+
+        <!-- Row 3: Date, currency, amount -->
+        <div class="form-row form-row-3">
+          <div class="form-field">
+            <label class="form-label">Credit Note Date</label>
+            <input class="form-control" type="text" value="18 Nov 2024">
+          </div>
+          <div class="form-field">
+            <label class="form-label">Currency</label>
+            <select class="form-control">
+              <option selected>USD</option>
+              <option>EUR</option>
+              <option>GBP</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Credit Amount</label>
+            <input class="form-control" type="text" value="42,500.00" style="font-weight:600;">
+          </div>
+        </div>
+
+        <!-- Row 4: Tax rate, net amount, gross amount -->
+        <div class="form-row form-row-3">
+          <div class="form-field">
+            <label class="form-label">VAT Rate</label>
+            <select class="form-control">
+              <option>0 %</option>
+              <option selected>20 %</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Net Amount</label>
+            <input class="form-control" type="text" value="35,416.67" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">VAT Amount</label>
+            <input class="form-control" type="text" value="7,083.33" readonly>
+          </div>
+        </div>
+
+        <!-- Row 5: Description -->
+        <div class="form-row form-row-1">
+          <div class="form-field">
+            <label class="form-label">Description / Reason for Credit</label>
+            <textarea class="form-control">Partial credit issued against INV-UFG-2024-1203 to correct overbilling on advisory hours during Q3 2024 engagement review. Approved by Finance Director on 15 Nov 2024.</textarea>
+          </div>
+        </div>
+
+        <!-- Row 6: Created by, approved by, payment status -->
+        <div class="form-row form-row-3">
+          <div class="form-field">
+            <label class="form-label">Created By</label>
+            <input class="form-control readonly" type="text" value="Sophie Marchetti" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Approved By</label>
+            <input class="form-control readonly" type="text" value="David Harrington" readonly>
+          </div>
+          <div class="form-field">
+            <label class="form-label">Payment Status</label>
+            <div class="form-control-readonly d-flex align-items-center gap-2">
+              <span class="label label-warning">Unpaid</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- End modal-body -->
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm">
+          <span class="ico-back btn-icon"></span>
+          Back
+        </button>
+        <button class="btn btn-primary btn-sm">
+          <span class="ico-save btn-icon"></span>
+          Save Credit Note
+        </button>
+      </div>
+
+    </div><!-- end .modal -->
+  </div><!-- end .modal-overlay -->
+</body>
+</html>
