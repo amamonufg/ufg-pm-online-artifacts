@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>Edit Bank Account – Form Mockup R2</title>
+  <link rel="stylesheet" href="03-r1-mockup-shared.css">
+  <style>
+    body {
+      background: #e8edf5;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .demo-modal-wrap {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .modal {
+      position: relative;
+      max-height: none !important;
+      overflow: visible !important;
+      width: 100%;
+    }
+
+    .modal-body {
+      overflow-y: visible !important;
+      overflow: visible !important;
+    }
+
+    /* ── Status History ───────────────────────────────── */
+    .status-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .status-section-header .section-label {
+      margin-bottom: 0;
+    }
+
+    .current-status-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .current-status-badge span {
+      font-weight: 600;
+    }
+
+    .status-history {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid #e4e4e4;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .status-history-empty {
+      padding: 16px;
+      color: #999;
+      font-size: 13px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Single history entry */
+    .status-entry {
+      border-bottom: 1px solid #f0f0f0;
+      background: #fff;
+    }
+
+    .status-entry:last-child {
+      border-bottom: none;
+    }
+
+    .status-entry-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 14px;
+    }
+
+    .status-entry-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .status-entry-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .status-entry-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-entry-date {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .status-entry-notes {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.45;
+    }
+
+    .status-entry-actions {
+      display: flex;
+      gap: 4px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    /* Inline edit form inside an entry */
+    .status-entry-edit {
+      padding: 12px 14px;
+      background: #f7f9fc;
+      border-top: 1px solid #dde6f2;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .status-entry-edit .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .status-entry-edit .form-field {
+      margin-bottom: 0;
+    }
+
+    .status-entry-edit .form-field.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .status-entry-edit .edit-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    /* Add status change */
+    .add-status-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #4a90d9;
+      background: none;
+      border: 1px dashed #4a90d9;
+      border-radius: 6px;
+      padding: 8px 14px;
+      cursor: pointer;
+      width: 100%;
+      justify-content: center;
+      transition: background 0.12s;
+      margin-bottom: 4px;
+    }
+
+    .add-status-btn:hover {
+      background: #f0f6ff;
+    }
+
+    .add-status-form {
+      border: 1px solid #dde6f2;
+      border-radius: 8px;
+      padding: 16px;
+      background: #f7f9fc;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .add-status-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .add-status-form .form-field {
+      margin-bottom: 0;
+    }
+
+    .add-status-form .form-field.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .add-status-form .form-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    /* Timeline connector */
+    .status-history-timeline {
+      position: relative;
+    }
+
+    .badge-block-removed { background: #dbeafe; color: #1e40af; }
+  </style>
+</head>
+<body>
+
+  <div class="demo-modal-wrap">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Edit Bank Account &mdash; AM-VTB-USD-01</h2>
+        <button class="modal-close" title="Close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- 1. Company -->
+        <div class="form-field">
+          <label>Company</label>
+          <div class="autocomplete-wrapper">
+            <input type="text" value="UFG Asset Management">
+            <span class="autocomplete-arrow">&#9660;</span>
+          </div>
+        </div>
+
+        <!-- 2. Bank Name -->
+        <div class="form-field">
+          <label>Bank Name</label>
+          <input type="text" value="VTB Bank">
+        </div>
+
+        <!-- 3. Account Name -->
+        <div class="form-field">
+          <label>Account Name</label>
+          <input type="text" value="USD Settlement Account">
+        </div>
+
+        <!-- 4. Short Code -->
+        <div class="form-field">
+          <label>Short Code</label>
+          <input type="text" value="AM-VTB-USD-01">
+        </div>
+
+        <!-- 5. Account Currency -->
+        <div class="form-field">
+          <label>Account Currency</label>
+          <div class="autocomplete-wrapper">
+            <input type="text" value="USD – US Dollar">
+            <span class="autocomplete-arrow">&#9660;</span>
+          </div>
+        </div>
+
+        <!-- 6. Account Number -->
+        <div class="form-field">
+          <label>Account Number</label>
+          <input type="text" value="40702840100000056789">
+        </div>
+
+        <!-- 7. Correspondent Account Number -->
+        <div class="form-field">
+          <label>Correspondent Account Number</label>
+          <input type="text" value="30101810400000000225">
+        </div>
+
+        <!-- 8. IBAN -->
+        <div class="form-field">
+          <label>IBAN</label>
+          <input type="text" value="RU18 0481 4000 0000 4070 2840 1000">
+        </div>
+
+        <!-- 9. SWIFT -->
+        <div class="form-field">
+          <label>SWIFT</label>
+          <input type="text" value="VTBRRUMM">
+        </div>
+
+        <!-- 10. Address -->
+        <div class="form-field">
+          <label>Address</label>
+          <textarea>29 Degtyarny Lane, Moscow, Russia, 127015</textarea>
+        </div>
+
+        <!-- Account Status History Section -->
+        <hr class="section-divider">
+
+        <div class="status-section-header">
+          <div class="section-label">Account Status History</div>
+          <div class="current-status-badge">
+            Current status: <span class="badge badge-active">Active</span>
+          </div>
+        </div>
+
+        <!-- History list — newest first -->
+        <div class="status-history">
+
+          <!-- Entry 1 (most recent): Block Removed — in EDIT mode to show editing UX -->
+          <div class="status-entry">
+            <div class="status-entry-row">
+              <div class="status-entry-left">
+                <div class="status-entry-meta">
+                  <div class="status-entry-top">
+                    <span class="badge badge-block-removed">Block Removed</span>
+                    <span class="status-entry-date">Mar 1, 2026</span>
+                  </div>
+                  <div class="status-entry-notes">KYC process completed successfully. All required documentation verified. Block lifted.</div>
+                </div>
+              </div>
+              <div class="status-entry-actions">
+                <button class="btn-icon" title="Edit" style="border-color:#4a90d9; color:#4a90d9; background:#eef5ff;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </button>
+              </div>
+            </div>
+            <!-- Inline edit form — shown open for this entry -->
+            <div class="status-entry-edit">
+              <div class="form-row">
+                <div class="form-field">
+                  <label>Event Type</label>
+                  <select>
+                    <option>Suspended</option>
+                    <option selected>Block Removed</option>
+                    <option>Terminated</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label>Date</label>
+                  <input type="date" value="2026-03-01">
+                </div>
+                <div class="form-field full-width">
+                  <label>Notes</label>
+                  <textarea style="min-height:56px;">KYC process completed successfully. All required documentation verified. Block lifted.</textarea>
+                </div>
+              </div>
+              <div class="edit-actions">
+                <button class="btn btn-secondary" style="padding:6px 14px; font-size:12px;">Cancel</button>
+                <button class="btn btn-primary" style="padding:6px 14px; font-size:12px;">Save</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 2 (older): Suspended — read-only -->
+          <div class="status-entry">
+            <div class="status-entry-row">
+              <div class="status-entry-left">
+                <div class="status-entry-meta">
+                  <div class="status-entry-top">
+                    <span class="badge badge-suspended">Suspended</span>
+                    <span class="status-entry-date">Jan 15, 2026</span>
+                  </div>
+                  <div class="status-entry-notes">KYC compliance review initiated. Account access restricted pending submission of ownership documentation.</div>
+                </div>
+              </div>
+              <div class="status-entry-actions">
+                <button class="btn-icon" title="Edit">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /status-history -->
+
+        <!-- Add Status Change button (collapsed state shown) -->
+        <button class="add-status-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+          Add Status Change
+        </button>
+
+      </div>
+      <!-- /modal-body -->
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
