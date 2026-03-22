@@ -18,11 +18,9 @@
         "AppLayout with hasYearSelect + hasToggler props",
         "UserTogglerContext + useUserTogglerState for user switching",
         "Feature guards (FEATURE.dashboard.rm / .lm / .commissions) per section",
-        "Interval picker (IntervalPicker) in card toolbar",
-        "CommissionVisibilityContext wraps commission card to hide/show dollar amounts",
-        "DrilldownTable cards use collapsible prop on Card component",
-        "showDetails toggler (Show commission structure) defaults to true in CommissionDashboard component",
-        "showAll toggler (Show all) defaults to false — dedicated page should default this to true"
+        "IntervalPicker in card toolbar",
+        "CommissionVisibilityContext hides/shows dollar amounts",
+        "DrilldownTable cards are collapsible; showAll defaults to false — dedicated page should default to true"
       ]
     },
     "similar_patterns": [
@@ -55,5 +53,31 @@
       "'All data shown / expanded by default' means: DrilldownTable cards not collapsed, showAll=true by default"
     ]
   },
-  "revisions": []
+  "revisions": [
+    {
+      "number": 1,
+      "overview": "The current RM dashboard page combines commission data and project data in one view. This design separates them into two dedicated pages: a Commission Dashboard (stats + drilldowns fully expanded by default) and a Projects Dashboard (RM and LM projects only).",
+      "layout_notes": [
+        "Entry point for the Commission Dashboard: new menu item under Financial alongside existing 'RM' entry",
+        "The existing 'RM' menu item will show only projects — no commission section",
+        "Both 'Commission drilldown' and 'Forecast commission drilldown' tables are expanded by default with Show all enabled",
+        "'Show commission structure' is on by default showing Dir / Referral / Sharing / Commission column groups",
+        "Visibility toggle (eye icon) hides dollar amounts — same existing behaviour",
+        "RM Projects and LM Projects have independent date range pickers in their card headers",
+        "User switcher (toggler) available on both pages for managers viewing other users' data",
+        "Both pages require appropriate feature permissions (commissions / rm / lm)"
+      ],
+      "files": [
+        { "filename": "03-r1-mockup-shared.css" },
+        { "filename": "03-r1-mockup-commission-dashboard.html" },
+        { "filename": "03-r1-mockup-projects-dashboard.html" }
+      ],
+      "screenshots": [
+        { "view": "Commission Dashboard", "file": "03-r1-mockup-commission-dashboard.png" },
+        { "view": "Projects Dashboard", "file": "03-r1-mockup-projects-dashboard.png" }
+      ],
+      "comments": [],
+      "output_description": null
+    }
+  ]
 }
