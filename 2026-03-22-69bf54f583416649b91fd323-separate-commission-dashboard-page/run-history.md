@@ -80,3 +80,33 @@ The current RM dashboard page combines commission data and project data in one v
 - On the Projects Dashboard, RM Projects and LM Projects have independent date range pickers in their card headers
 - The user switcher (toggler) is available on both pages for managers viewing other users' data
 - Both pages require appropriate feature permissions (commissions for Commission page; rm/lm for Projects page)
+
+---
+
+## Output Description
+
+## Original Request
+
+![%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.webp](https://trello.com/1/cards/69bf54f583416649b91fd323/attachments/69bf57873571babd9ccb23a2/download/01-user-prompt-image-01.png)
+
+1. Separate Commission dashboard page (with all data shown / expanded by default)
+2. Extract projects to separate dashboard page
+
+## Overview
+
+The current RM dashboard page combines commission data and project data in one view. This design separates them into two dedicated pages: (1) a Commission Dashboard with all commission stats and drilldown tables expanded by default, and (2) a Projects Dashboard showing only RM and LM project sections.
+
+**Views:**
+- ![Commission Dashboard](https://trello.com/1/cards/69bf54f583416649b91fd323/attachments/69bf577d30dcccc745f80cf0/download/03-r1-mockup-commission-dashboard.png)
+- ![Projects Dashboard](https://trello.com/1/cards/69bf54f583416649b91fd323/attachments/69bf57827c41f331f75b9f71/download/03-r1-mockup-projects-dashboard.png)
+
+### Layout Notes
+
+- Entry point for the Commission Dashboard: a new menu item under Financial (e.g. "RM Commissions") alongside the existing "RM" entry
+- The existing "RM" menu item will show only projects — no commission section
+- On the Commission Dashboard, both "Commission drilldown" and "Forecast commission drilldown" tables are expanded by default with Show all enabled
+- The "Show commission structure" toggle is on by default, showing Dir / Referral / Sharing / Commission column groups
+- The visibility toggle (eye icon) hides dollar amounts — same existing behavior
+- On the Projects Dashboard, RM Projects and LM Projects have independent date range pickers in their card headers
+- The user switcher (toggler) is available on both pages for managers viewing other users' data
+- Both pages require appropriate feature permissions (commissions for Commission page; rm/lm for Projects page)
