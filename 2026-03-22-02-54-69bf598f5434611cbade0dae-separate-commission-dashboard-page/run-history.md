@@ -62,3 +62,31 @@ The current RM dashboard page combines commission data and project data in one v
 - RM Projects and LM Projects have independent date range pickers in their card headers
 - User switcher (toggler) available on both pages for managers viewing other users' data
 - Both pages require appropriate feature permissions (commissions / rm / lm)
+
+---
+
+## Output Description
+
+## Original Request
+
+![image](https://trello.com/1/cards/69bf598f5434611cbade0dae/attachments/69bf5b4785822a001fa9fc76/download/01-user-prompt-image-01.png)
+
+1. Separate Commission dashboard page (with all data shown / expanded by default)
+2. Extract projects to separate dashboard page
+
+The current RM dashboard page combines commission data and project data in one view. This design separates them into two dedicated pages: a Commission Dashboard (stats + drilldowns fully expanded by default) and a Projects Dashboard (RM and LM projects only).
+
+![Commission Dashboard](https://trello.com/1/cards/69bf598f5434611cbade0dae/attachments/69bf5b3c35c1a05004c17706/download/03-r1-mockup-commission-dashboard.png)
+
+![Projects Dashboard](https://trello.com/1/cards/69bf598f5434611cbade0dae/attachments/69bf57827c41f331f75b9f71/download/03-r1-mockup-projects-dashboard.png)
+
+### Layout Notes
+
+- Entry point for the Commission Dashboard: new menu item under Financial alongside existing 'RM' entry
+- The existing 'RM' menu item will show only projects — no commission section
+- Both 'Commission drilldown' and 'Forecast commission drilldown' tables are expanded by default with Show all enabled
+- 'Show commission structure' is on by default showing Dir / Referral / Sharing / Commission column groups
+- Visibility toggle (eye icon) hides dollar amounts — same existing behaviour
+- RM Projects and LM Projects have independent date range pickers in their card headers
+- User switcher (toggler) available on both pages for managers viewing other users' data
+- Both pages require appropriate feature permissions (commissions / rm / lm)
