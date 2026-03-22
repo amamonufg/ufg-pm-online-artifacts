@@ -1,6 +1,84 @@
 {
   "user_prompt": "![%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5.webp](01-user-prompt-image-01.png)\n\n1. Separate Commission dashboard page (with all data shown / expanded by default)\n2. Extract projects to separate dashboard page",
-  "ui_research": null,
+  "ui_research": {
+    "module": "Dashboard / RM",
+    "reference_page": {
+      "path": "src/pages/dashboard/rmDashboard/containers/RmDashboard.tsx",
+      "layout_type": "full-page dashboard with multiple collapsible cards",
+      "components_used": [
+        "src/pages/dashboard/rmDashboard/containers/Commissions.tsx",
+        "src/pages/dashboard/rmDashboard/containers/RmProjects.tsx",
+        "src/pages/dashboard/rmDashboard/containers/LmProjects.tsx",
+        "src/pages/dashboard/rmDashboard/components/CommissionDashboard.tsx",
+        "src/pages/dashboard/rmDashboard/components/ProjectDashboard.tsx",
+        "src/components/Card",
+        "src/components/Layout (AppLayout)"
+      ],
+      "patterns_noted": [
+        "AppLayout with hasYearSelect + hasToggler props",
+        "UserTogglerContext + useUserTogglerState for user switching",
+        "Feature guards (FEATURE.dashboard.rm / .lm / .commissions) per section",
+        "Interval picker (IntervalPicker) in card toolbar",
+        "CommissionVisibilityContext wraps commission card to hide/show dollar amounts",
+        "DrilldownTable cards use collapsible prop on Card component",
+        "showDetails toggler (Show commission structure) defaults to true in CommissionDashboard component",
+        "showAll toggler (Show all) defaults to false — request says expanded by default means this should be true on dedicated page"
+      ]
+    },
+    "similar_patterns": [
+      {
+        "description": "Personal business line dashboard — separate page for a sub-view of a combined dashboard",
+        "found_at": "src/pages/dashboard/businessLineDashboardPersonal/containers/BusinessLineDashboardPersonal.tsx"
+      },
+      {
+        "description": "CommissionDashboard (full summary) — separate page for user's own commissions",
+        "found_at": "src/pages/dashboard/commissionsDashboard/containers/CommissionDashboard.tsx"
+      }
+    ],
+    "components_needed": [
+      { "name": "AppLayout", "path": "src/components/Layout" },
+      { "name": "Card / CardToolbar", "path": "src/components/Card" },
+      { "name": "Feature", "path": "src/features" },
+      { "name": "Forbidden", "path": "src/components/Errors" },
+      { "name": "ScrollTop", "path": "src/components/ScrollTop" },
+      { "name": "UserTogglerContext / useUserTogglerState", "path": "src/pages/global/UserToggler" },
+      { "name": "IntervalPicker / useIntervalPickerState", "path": "src/components/Date/IntervalPicker" },
+      { "name": "CommissionDashboard (component)", "path": "src/pages/dashboard/rmDashboard/components/CommissionDashboard.tsx" },
+      { "name": "CommissionVisibilityContext / CommissionsVisibilityButton", "path": "src/pages/dashboard/rmDashboard/components/CommissionVisibilityContext.tsx" },
+      { "name": "CommissionExportButton", "path": "src/pages/dashboard/rmDashboard/components/CommissionExportButton.tsx" },
+      { "name": "Commissions (container)", "path": "src/pages/dashboard/rmDashboard/containers/Commissions.tsx" },
+      { "name": "RmProjects (container)", "path": "src/pages/dashboard/rmDashboard/containers/RmProjects.tsx" },
+      { "name": "LmProjects (container)", "path": "src/pages/dashboard/rmDashboard/containers/LmProjects.tsx" }
+    ],
+    "image_observations": [
+      "Page has a top-level 'Commission' card with an interval date-range picker in the toolbar (top-right)",
+      "Commission card toolbar also has a visibility toggle ('hide' eye icon) and export button",
+      "Inside Commission card: three circular stats widgets in a row — Summary (yellow), Structure (green), Sharing (blue)",
+      "Below the stats: 'Commission drilldown' secondary card — collapsible, with 'Show commission structure' and 'Show all' togglers in its toolbar",
+      "Below that: 'Forecast commission drilldown' secondary card — collapsible, same togglers",
+      "Commission drilldown table columns: #, Client, SC, SNC, Team, $ NET Rev, % NET Budget, then Dir / Referral / Sharing / Commission column groups",
+      "Below Commission card: 'RM projects' section with Revenue / Net Revenue / Origination stat widgets and a detailed project table",
+      "RM projects table columns: Name, Client, SNC, SNC, Status, Type, RM, NET J.Cli, then REV section (Paid$, Target$, Invoiced$, Target$) and COS and NET sections",
+      "Below RM projects: 'LM projects' section with the same layout",
+      "The request says 'all data shown / expanded by default' — this means the collapsible DrilldownTable cards should be open (not collapsed) and 'Show all' should be true by default on the Commission-only page"
+    ],
+    "proposed_split": {
+      "commission_page": {
+        "description": "New page showing only the Commission section (stats + drilldowns) with all data expanded by default",
+        "route": "/dashboard/rm/commissions",
+        "source_container": "src/pages/dashboard/rmDashboard/containers/Commissions.tsx",
+        "key_change": "Pass showAll=true and do not collapse DrilldownTable cards by default"
+      },
+      "projects_page": {
+        "description": "Refactored RmDashboard (or new page) showing only RM Projects + LM Projects",
+        "route": "/dashboard/rm (existing) or /dashboard/rm/projects",
+        "source_containers": [
+          "src/pages/dashboard/rmDashboard/containers/RmProjects.tsx",
+          "src/pages/dashboard/rmDashboard/containers/LmProjects.tsx"
+        ]
+      }
+    }
+  },
   "revisions": [],
   "output_description": null
 }
