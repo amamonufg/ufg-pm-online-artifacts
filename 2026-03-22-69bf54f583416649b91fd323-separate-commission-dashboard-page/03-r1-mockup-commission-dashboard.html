@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1600">
+  <title>Commission Dashboard</title>
+  <link rel="stylesheet" href="mockup-shared.css">
+  <style>
+    /* Ensure drilldown tables are never collapsed */
+    .drilldown-card .card-header { cursor: default; }
+  </style>
+</head>
+<body>
+  <h1 class="page-title">Commission</h1>
+  <div class="page-content">
+
+    <!-- Main Commission Card -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <i>%</i>
+          Commission
+        </div>
+        <div class="card-toolbar">
+          <button class="icon-btn" title="Hide commission values">👁</button>
+          <button class="btn btn-light btn-sm">⬇ Export</button>
+          <div class="date-range">
+            <i>📅</i>
+            01/01/2025 &nbsp;→&nbsp; 31/12/2025
+            <i style="margin-left:6px">▾</i>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+
+        <!-- Stats row: 3 circles -->
+        <div class="stat-circles">
+
+          <!-- Summary -->
+          <div class="stat-circle-card">
+            <div style="display:flex;flex-direction:column;align-items:center">
+              <div class="circle warning" style="width:72px;height:72px;background:#fff4de;font-size:32px;border-radius:50%;display:flex;align-items:center;justify-content:center">💰</div>
+              <div class="circle-label" style="color:#ffa800;font-size:11px;font-weight:700;margin-top:4px">Summary</div>
+            </div>
+            <div class="stat-rows">
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-label">Invoiced</div>
+                  <div class="stat-value">$84,320</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Claimable</div>
+                  <div class="stat-value">$91,450</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Budget</div>
+                  <div class="stat-value">$105,000</div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-label">To be paid</div>
+                  <div class="stat-value muted">$24,130</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Paid</div>
+                  <div class="stat-value muted">$67,320</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Structure -->
+          <div class="stat-circle-card">
+            <div style="display:flex;flex-direction:column;align-items:center">
+              <div class="circle success" style="width:72px;height:72px;background:#e8fff3;font-size:32px;border-radius:50%;display:flex;align-items:center;justify-content:center">⚙️</div>
+              <div class="circle-label" style="color:#1bc5bd;font-size:11px;font-weight:700;margin-top:4px">Structure</div>
+            </div>
+            <div class="stat-rows">
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-label">RM fee</div>
+                  <div class="stat-value">$61,200</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Referral fee</div>
+                  <div class="stat-value">$18,650</div>
+                </div>
+              </div>
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-label">RM sharing</div>
+                  <div class="stat-value muted">$8,400</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Revenue based</div>
+                  <div class="stat-value muted">$3,200</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sharing -->
+          <div class="stat-circle-card">
+            <div style="display:flex;flex-direction:column;align-items:center">
+              <div class="circle primary" style="width:72px;height:72px;background:#e8f3ff;font-size:32px;border-radius:50%;display:flex;align-items:center;justify-content:center">🔄</div>
+              <div class="circle-label" style="color:#3699ff;font-size:11px;font-weight:700;margin-top:4px">Sharing</div>
+            </div>
+            <div class="stat-rows">
+              <div class="stat-row">
+                <div class="stat-item">
+                  <div class="stat-label">Inbound</div>
+                  <div class="stat-value">$5,800</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-label">Outbound</div>
+                  <div class="stat-value">$2,600</div>
+                </div>
+              </div>
+              <div style="margin-top:8px;font-size:12px;color:#7e8299">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                  <span style="color:#1bc5bd">→</span> Elena Kovalevskaya <span style="color:#3f4254;font-weight:600">$3,200</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                  <span style="color:#f64e60">←</span> Dmytro Marchenko <span style="color:#3f4254;font-weight:600">$1,600</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px">
+                  <span style="color:#1bc5bd">→</span> Olena Petrenko <span style="color:#3f4254;font-weight:600">$2,600</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /stat-circles -->
+
+        <!-- Commission drilldown — expanded, not collapsible -->
+        <div class="card secondary drilldown-card" style="margin-bottom:12px">
+          <div class="card-header">
+            <div class="card-title">
+              ✓ Commission drilldown
+              <span class="badge">7</span>
+            </div>
+            <div class="card-toolbar">
+              <span class="toggler">
+                <span class="toggler-switch"></span>
+                Show commission structure
+              </span>
+              <span class="toggler" style="margin-left:12px">
+                <span class="toggler-switch"></span>
+                Show all
+              </span>
+            </div>
+          </div>
+          <div class="card-body p0">
+            <div style="overflow-x:auto">
+              <table>
+                <thead>
+                  <tr>
+                    <th rowspan="2">#</th>
+                    <th rowspan="2">Client</th>
+                    <th rowspan="2">SC</th>
+                    <th rowspan="2">SNC</th>
+                    <th rowspan="2">Team</th>
+                    <th rowspan="2" class="text-right">$ NET Rev</th>
+                    <th rowspan="2" class="text-right">% NET Budget</th>
+                    <th colspan="3" class="col-group-sep text-center" style="background:#eef0fb">Dir</th>
+                    <th colspan="3" class="col-group-sep text-center" style="background:#e8fff3">Referral</th>
+                    <th colspan="3" class="col-group-sep text-center" style="background:#fff8f0">Sharing</th>
+                    <th colspan="3" class="col-group-sep text-center" style="background:#f3f0ff">Commission</th>
+                  </tr>
+                  <tr>
+                    <th class="col-group-sep text-right cg-dir" style="font-size:10px">$ Fee</th>
+                    <th class="text-right cg-dir" style="font-size:10px">%</th>
+                    <th class="text-right cg-dir" style="font-size:10px">$ Budget</th>
+                    <th class="col-group-sep text-right cg-ref" style="font-size:10px">$ Fee</th>
+                    <th class="text-right cg-ref" style="font-size:10px">%</th>
+                    <th class="text-right cg-ref" style="font-size:10px">$ Budget</th>
+                    <th class="col-group-sep text-right cg-shr" style="font-size:10px">$ Fee</th>
+                    <th class="text-right cg-shr" style="font-size:10px">To / From</th>
+                    <th class="text-right cg-shr" style="font-size:10px">$ Budget</th>
+                    <th class="col-group-sep text-right cg-com" style="font-size:10px">$ Fee</th>
+                    <th class="text-right cg-com" style="font-size:10px">$ Total</th>
+                    <th class="text-right cg-com" style="font-size:10px">$ Budget</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-muted">1</td>
+                    <td><strong>Astra Holdings</strong></td>
+                    <td>UK</td>
+                    <td>FMS</td>
+                    <td>Alpha</td>
+                    <td class="text-right">$142,800</td>
+                    <td class="text-right">91%</td>
+                    <td class="col-group-sep text-right cg-dir">$14,280</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$15,700</td>
+                    <td class="col-group-sep text-right cg-ref">$4,280</td>
+                    <td class="text-right cg-ref">3%</td>
+                    <td class="text-right cg-ref">$4,700</td>
+                    <td class="col-group-sep text-right cg-shr">$1,200</td>
+                    <td class="text-right cg-shr">Elena K.</td>
+                    <td class="text-right cg-shr">$1,300</td>
+                    <td class="col-group-sep text-right cg-com">$19,760</td>
+                    <td class="text-right cg-com">$20,960</td>
+                    <td class="text-right cg-com">$21,700</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">2</td>
+                    <td><strong>Meridian Corp</strong></td>
+                    <td>UA</td>
+                    <td>RES</td>
+                    <td>Beta</td>
+                    <td class="text-right">$98,400</td>
+                    <td class="text-right">85%</td>
+                    <td class="col-group-sep text-right cg-dir">$9,840</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$11,600</td>
+                    <td class="col-group-sep text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="col-group-sep text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="col-group-sep text-right cg-com">$9,840</td>
+                    <td class="text-right cg-com">$9,840</td>
+                    <td class="text-right cg-com">$11,600</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">3</td>
+                    <td><strong>Pinnacle Finance</strong></td>
+                    <td>DE</td>
+                    <td>FMS</td>
+                    <td>Alpha</td>
+                    <td class="text-right">$76,200</td>
+                    <td class="text-right">102%</td>
+                    <td class="col-group-sep text-right cg-dir">$7,620</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$7,500</td>
+                    <td class="col-group-sep text-right cg-ref">$2,286</td>
+                    <td class="text-right cg-ref">3%</td>
+                    <td class="text-right cg-ref">$2,250</td>
+                    <td class="col-group-sep text-right cg-shr">$600</td>
+                    <td class="text-right cg-shr">Dmytro M.</td>
+                    <td class="text-right cg-shr">$550</td>
+                    <td class="col-group-sep text-right cg-com">$10,506</td>
+                    <td class="text-right cg-com">$11,106</td>
+                    <td class="text-right cg-com">$10,300</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">4</td>
+                    <td><strong>NordStream Tech</strong></td>
+                    <td>PL</td>
+                    <td>IT</td>
+                    <td>Gamma</td>
+                    <td class="text-right">$55,600</td>
+                    <td class="text-right">79%</td>
+                    <td class="col-group-sep text-right cg-dir">$5,560</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$7,040</td>
+                    <td class="col-group-sep text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="col-group-sep text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="col-group-sep text-right cg-com">$5,560</td>
+                    <td class="text-right cg-com">$5,560</td>
+                    <td class="text-right cg-com">$7,040</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">5</td>
+                    <td><strong>Solaris Group</strong></td>
+                    <td>UK</td>
+                    <td>RES</td>
+                    <td>Beta</td>
+                    <td class="text-right">$43,100</td>
+                    <td class="text-right">95%</td>
+                    <td class="col-group-sep text-right cg-dir">$4,310</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$4,540</td>
+                    <td class="col-group-sep text-right cg-ref">$1,293</td>
+                    <td class="text-right cg-ref">3%</td>
+                    <td class="text-right cg-ref">$1,362</td>
+                    <td class="col-group-sep text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="col-group-sep text-right cg-com">$5,603</td>
+                    <td class="text-right cg-com">$5,603</td>
+                    <td class="text-right cg-com">$5,902</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">6</td>
+                    <td><strong>Vertex Capital</strong></td>
+                    <td>UA</td>
+                    <td>FMS</td>
+                    <td>Alpha</td>
+                    <td class="text-right">$38,400</td>
+                    <td class="text-right">88%</td>
+                    <td class="col-group-sep text-right cg-dir">$3,840</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$4,360</td>
+                    <td class="col-group-sep text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="col-group-sep text-right cg-shr">$800</td>
+                    <td class="text-right cg-shr">Elena K.</td>
+                    <td class="text-right cg-shr">$900</td>
+                    <td class="col-group-sep text-right cg-com">$4,640</td>
+                    <td class="text-right cg-com">$4,640</td>
+                    <td class="text-right cg-com">$5,260</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">7</td>
+                    <td><strong>Quantum Dynamics</strong></td>
+                    <td>DE</td>
+                    <td>IT</td>
+                    <td>Gamma</td>
+                    <td class="text-right">$30,800</td>
+                    <td class="text-right">112%</td>
+                    <td class="col-group-sep text-right cg-dir">$3,080</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$2,750</td>
+                    <td class="col-group-sep text-right cg-ref">$924</td>
+                    <td class="text-right cg-ref">3%</td>
+                    <td class="text-right cg-ref">$825</td>
+                    <td class="col-group-sep text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="col-group-sep text-right cg-com">$4,004</td>
+                    <td class="text-right cg-com">$4,004</td>
+                    <td class="text-right cg-com">$3,575</td>
+                  </tr>
+                  <tr class="totals-row">
+                    <td colspan="5"><strong>Totals</strong></td>
+                    <td class="text-right"><strong>$485,300</strong></td>
+                    <td class="text-right"><strong>91%</strong></td>
+                    <td class="col-group-sep text-right"><strong>$48,530</strong></td>
+                    <td class="text-right"><strong>—</strong></td>
+                    <td class="text-right"><strong>$53,490</strong></td>
+                    <td class="col-group-sep text-right"><strong>$8,783</strong></td>
+                    <td class="text-right"><strong>—</strong></td>
+                    <td class="text-right"><strong>$9,137</strong></td>
+                    <td class="col-group-sep text-right"><strong>$2,600</strong></td>
+                    <td class="text-right"><strong>—</strong></td>
+                    <td class="text-right"><strong>$2,750</strong></td>
+                    <td class="col-group-sep text-right"><strong>$59,913</strong></td>
+                    <td class="text-right"><strong>$62,113</strong></td>
+                    <td class="text-right"><strong>$65,377</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forecast commission drilldown — also expanded -->
+        <div class="card secondary drilldown-card">
+          <div class="card-header">
+            <div class="card-title">
+              ✓ Forecast commission drilldown
+              <span class="badge">7</span>
+            </div>
+            <div class="card-toolbar">
+              <span class="toggler">
+                <span class="toggler-switch"></span>
+                Show commission structure
+              </span>
+            </div>
+          </div>
+          <div class="card-body p0">
+            <div style="overflow-x:auto">
+              <table>
+                <thead>
+                  <tr>
+                    <th rowspan="2">#</th>
+                    <th rowspan="2">Client</th>
+                    <th rowspan="2">SC</th>
+                    <th rowspan="2">SNC</th>
+                    <th rowspan="2">Team</th>
+                    <th rowspan="2" class="text-right">$ NET Rev</th>
+                    <th rowspan="2" class="text-right">% NET Budget</th>
+                    <th colspan="3" class="col-group-sep text-center" style="background:#eef0fb">Dir</th>
+                    <th colspan="3" class="col-group-sep text-center" style="background:#e8fff3">Referral</th>
+                    <th colspan="3" class="col-group-sep text-center" style="background:#fff8f0">Sharing</th>
+                    <th colspan="3" class="col-group-sep text-center" style="background:#f3f0ff">Commission</th>
+                  </tr>
+                  <tr>
+                    <th class="col-group-sep text-right cg-dir" style="font-size:10px">$ Fee</th>
+                    <th class="text-right cg-dir" style="font-size:10px">%</th>
+                    <th class="text-right cg-dir" style="font-size:10px">$ Budget</th>
+                    <th class="col-group-sep text-right cg-ref" style="font-size:10px">$ Fee</th>
+                    <th class="text-right cg-ref" style="font-size:10px">%</th>
+                    <th class="text-right cg-ref" style="font-size:10px">$ Budget</th>
+                    <th class="col-group-sep text-right cg-shr" style="font-size:10px">$ Fee</th>
+                    <th class="text-right cg-shr" style="font-size:10px">To / From</th>
+                    <th class="text-right cg-shr" style="font-size:10px">$ Budget</th>
+                    <th class="col-group-sep text-right cg-com" style="font-size:10px">$ Fee</th>
+                    <th class="text-right cg-com" style="font-size:10px">$ Total</th>
+                    <th class="text-right cg-com" style="font-size:10px">$ Budget</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-muted">1</td>
+                    <td><strong>Astra Holdings</strong></td>
+                    <td>UK</td>
+                    <td>FMS</td>
+                    <td>Alpha</td>
+                    <td class="text-right">$157,000</td>
+                    <td class="text-right">100%</td>
+                    <td class="col-group-sep text-right cg-dir">$15,700</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$15,700</td>
+                    <td class="col-group-sep text-right cg-ref">$4,710</td>
+                    <td class="text-right cg-ref">3%</td>
+                    <td class="text-right cg-ref">$4,700</td>
+                    <td class="col-group-sep text-right cg-shr">$1,300</td>
+                    <td class="text-right cg-shr">Elena K.</td>
+                    <td class="text-right cg-shr">$1,300</td>
+                    <td class="col-group-sep text-right cg-com">$21,710</td>
+                    <td class="text-right cg-com">$23,010</td>
+                    <td class="text-right cg-com">$21,700</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">2</td>
+                    <td><strong>Meridian Corp</strong></td>
+                    <td>UA</td>
+                    <td>RES</td>
+                    <td>Beta</td>
+                    <td class="text-right">$115,600</td>
+                    <td class="text-right">100%</td>
+                    <td class="col-group-sep text-right cg-dir">$11,560</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$11,600</td>
+                    <td class="col-group-sep text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="col-group-sep text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="col-group-sep text-right cg-com">$11,560</td>
+                    <td class="text-right cg-com">$11,560</td>
+                    <td class="text-right cg-com">$11,600</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">3</td>
+                    <td><strong>Pinnacle Finance</strong></td>
+                    <td>DE</td>
+                    <td>FMS</td>
+                    <td>Alpha</td>
+                    <td class="text-right">$74,600</td>
+                    <td class="text-right">99%</td>
+                    <td class="col-group-sep text-right cg-dir">$7,460</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$7,500</td>
+                    <td class="col-group-sep text-right cg-ref">$2,238</td>
+                    <td class="text-right cg-ref">3%</td>
+                    <td class="text-right cg-ref">$2,250</td>
+                    <td class="col-group-sep text-right cg-shr">$550</td>
+                    <td class="text-right cg-shr">Dmytro M.</td>
+                    <td class="text-right cg-shr">$550</td>
+                    <td class="col-group-sep text-right cg-com">$10,248</td>
+                    <td class="text-right cg-com">$10,798</td>
+                    <td class="text-right cg-com">$10,300</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">4</td>
+                    <td><strong>NordStream Tech</strong></td>
+                    <td>PL</td>
+                    <td>IT</td>
+                    <td>Gamma</td>
+                    <td class="text-right">$70,400</td>
+                    <td class="text-right">100%</td>
+                    <td class="col-group-sep text-right cg-dir">$7,040</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$7,040</td>
+                    <td class="col-group-sep text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="col-group-sep text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="col-group-sep text-right cg-com">$7,040</td>
+                    <td class="text-right cg-com">$7,040</td>
+                    <td class="text-right cg-com">$7,040</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">5</td>
+                    <td><strong>Solaris Group</strong></td>
+                    <td>UK</td>
+                    <td>RES</td>
+                    <td>Beta</td>
+                    <td class="text-right">$45,400</td>
+                    <td class="text-right">100%</td>
+                    <td class="col-group-sep text-right cg-dir">$4,540</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$4,540</td>
+                    <td class="col-group-sep text-right cg-ref">$1,362</td>
+                    <td class="text-right cg-ref">3%</td>
+                    <td class="text-right cg-ref">$1,362</td>
+                    <td class="col-group-sep text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="col-group-sep text-right cg-com">$5,902</td>
+                    <td class="text-right cg-com">$5,902</td>
+                    <td class="text-right cg-com">$5,902</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">6</td>
+                    <td><strong>Vertex Capital</strong></td>
+                    <td>UA</td>
+                    <td>FMS</td>
+                    <td>Alpha</td>
+                    <td class="text-right">$43,600</td>
+                    <td class="text-right">100%</td>
+                    <td class="col-group-sep text-right cg-dir">$4,360</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$4,360</td>
+                    <td class="col-group-sep text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="text-right cg-ref">—</td>
+                    <td class="col-group-sep text-right cg-shr">$900</td>
+                    <td class="text-right cg-shr">Elena K.</td>
+                    <td class="text-right cg-shr">$900</td>
+                    <td class="col-group-sep text-right cg-com">$5,260</td>
+                    <td class="text-right cg-com">$5,260</td>
+                    <td class="text-right cg-com">$5,260</td>
+                  </tr>
+                  <tr>
+                    <td class="text-muted">7</td>
+                    <td><strong>Quantum Dynamics</strong></td>
+                    <td>DE</td>
+                    <td>IT</td>
+                    <td>Gamma</td>
+                    <td class="text-right">$27,500</td>
+                    <td class="text-right">100%</td>
+                    <td class="col-group-sep text-right cg-dir">$2,750</td>
+                    <td class="text-right cg-dir">10%</td>
+                    <td class="text-right cg-dir">$2,750</td>
+                    <td class="col-group-sep text-right cg-ref">$825</td>
+                    <td class="text-right cg-ref">3%</td>
+                    <td class="text-right cg-ref">$825</td>
+                    <td class="col-group-sep text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="text-right cg-shr">—</td>
+                    <td class="col-group-sep text-right cg-com">$3,575</td>
+                    <td class="text-right cg-com">$3,575</td>
+                    <td class="text-right cg-com">$3,575</td>
+                  </tr>
+                  <tr class="totals-row">
+                    <td colspan="5"><strong>Totals</strong></td>
+                    <td class="text-right"><strong>$534,100</strong></td>
+                    <td class="text-right"><strong>100%</strong></td>
+                    <td class="col-group-sep text-right"><strong>$53,410</strong></td>
+                    <td class="text-right"><strong>—</strong></td>
+                    <td class="text-right"><strong>$53,490</strong></td>
+                    <td class="col-group-sep text-right"><strong>$9,135</strong></td>
+                    <td class="text-right"><strong>—</strong></td>
+                    <td class="text-right"><strong>$9,137</strong></td>
+                    <td class="col-group-sep text-right"><strong>$2,750</strong></td>
+                    <td class="text-right"><strong>—</strong></td>
+                    <td class="text-right"><strong>$2,750</strong></td>
+                    <td class="col-group-sep text-right"><strong>$65,295</strong></td>
+                    <td class="text-right"><strong>$68,045</strong></td>
+                    <td class="text-right"><strong>$65,377</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /card-body -->
+    </div><!-- /main Commission card -->
+
+  </div>
+</body>
+</html>
