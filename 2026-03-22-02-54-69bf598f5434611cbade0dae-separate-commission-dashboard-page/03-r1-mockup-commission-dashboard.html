@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1600">
+  <title>Commission Dashboard</title>
+  <link rel="stylesheet" href="03-r1-mockup-shared.css">
+</head>
+<body>
+<h1 class="page-title">Commission</h1>
+<div class="page-content">
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <span style="color:#7e8299;font-size:16px">%</span>
+        Commission
+      </div>
+      <div class="card-toolbar">
+        <button class="icon-btn" title="Hide values">👁</button>
+        <button class="btn btn-light" style="font-size:12px">⬇ Export</button>
+        <div class="date-range">📅 01/01/2025 → 31/12/2025 ▾</div>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <!-- Stats row -->
+      <div class="stat-circles">
+
+        <div class="stat-circle-card">
+          <div class="circle-wrap">
+            <div class="circle warning">💰</div>
+            <div class="circle-label" style="color:#ffa800">Summary</div>
+          </div>
+          <div class="stat-rows">
+            <div class="stat-row">
+              <div class="stat-item"><div class="stat-label">Invoiced</div><div class="stat-value">$84,320</div></div>
+              <div class="stat-item"><div class="stat-label">Claimable</div><div class="stat-value">$91,450</div></div>
+              <div class="stat-item"><div class="stat-label">Budget</div><div class="stat-value">$105,000</div></div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-item"><div class="stat-label">To be paid</div><div class="stat-value sm">$24,130</div></div>
+              <div class="stat-item"><div class="stat-label">Paid</div><div class="stat-value sm">$67,320</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-circle-card">
+          <div class="circle-wrap">
+            <div class="circle success">⚙️</div>
+            <div class="circle-label" style="color:#1bc5bd">Structure</div>
+          </div>
+          <div class="stat-rows">
+            <div class="stat-row">
+              <div class="stat-item"><div class="stat-label">RM fee</div><div class="stat-value">$61,200</div></div>
+              <div class="stat-item"><div class="stat-label">Referral fee</div><div class="stat-value">$18,650</div></div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-item"><div class="stat-label">RM sharing</div><div class="stat-value sm">$8,400</div></div>
+              <div class="stat-item"><div class="stat-label">Revenue based</div><div class="stat-value sm">$3,200</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-circle-card">
+          <div class="circle-wrap">
+            <div class="circle primary">🔄</div>
+            <div class="circle-label" style="color:#3699ff">Sharing</div>
+          </div>
+          <div class="stat-rows">
+            <div class="stat-row">
+              <div class="stat-item"><div class="stat-label">Inbound</div><div class="stat-value">$5,800</div></div>
+              <div class="stat-item"><div class="stat-label">Outbound</div><div class="stat-value">$2,600</div></div>
+            </div>
+            <div class="stat-row" style="font-size:12px;color:#3f4254;flex-direction:column;gap:4px">
+              <div><span style="color:#1bc5bd">→</span> Elena Kovalevskaya &nbsp;<strong>$3,200</strong></div>
+              <div><span style="color:#f64e60">←</span> Dmytro Marchenko &nbsp;<strong>$1,600</strong></div>
+              <div><span style="color:#1bc5bd">→</span> Olena Petrenko &nbsp;<strong>$2,600</strong></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /stat-circles -->
+
+      <!-- Commission drilldown — expanded, Show all ON -->
+      <div class="card secondary" style="margin-bottom:12px">
+        <div class="card-header">
+          <div class="card-title">✓ Commission drilldown <span class="lbl">7</span></div>
+          <div class="card-toolbar">
+            <span class="toggler"><span class="toggler-switch"></span> Show commission structure</span>
+            <span class="toggler" style="margin-left:8px"><span class="toggler-switch"></span> Show all</span>
+          </div>
+        </div>
+        <div class="card-body p0">
+          <div style="overflow-x:auto">
+            <table>
+              <thead>
+                <tr>
+                  <th rowspan="2">#</th>
+                  <th rowspan="2">Client</th>
+                  <th rowspan="2">SC</th>
+                  <th rowspan="2">SNC</th>
+                  <th rowspan="2">Team</th>
+                  <th rowspan="2" class="text-right">$ NET Rev</th>
+                  <th rowspan="2" class="text-right">% NET Budget</th>
+                  <th colspan="3" class="g-sep g-dir text-center">Dir</th>
+                  <th colspan="3" class="g-sep g-ref text-center">Referral</th>
+                  <th colspan="3" class="g-sep g-shr text-center">Sharing</th>
+                  <th colspan="3" class="g-sep g-com text-center">Commission</th>
+                </tr>
+                <tr>
+                  <th class="g-sep g-dir text-right" style="font-size:10px">$ Fee</th><th class="g-dir text-right" style="font-size:10px">%</th><th class="g-dir text-right" style="font-size:10px">$ Budget</th>
+                  <th class="g-sep g-ref text-right" style="font-size:10px">$ Fee</th><th class="g-ref text-right" style="font-size:10px">%</th><th class="g-ref text-right" style="font-size:10px">$ Budget</th>
+                  <th class="g-sep g-shr text-right" style="font-size:10px">$ Fee</th><th class="g-shr text-right" style="font-size:10px">To / From</th><th class="g-shr text-right" style="font-size:10px">$ Budget</th>
+                  <th class="g-sep g-com text-right" style="font-size:10px">$ Fee</th><th class="g-com text-right" style="font-size:10px">$ Total</th><th class="g-com text-right" style="font-size:10px">$ Budget</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-muted">1</td><td><strong>Astra Holdings</strong></td><td>UK</td><td>FMS</td><td>Alpha</td>
+                  <td class="text-right">$142,800</td><td class="text-right">91%</td>
+                  <td class="g-sep g-dir text-right">$14,280</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$15,700</td>
+                  <td class="g-sep g-ref text-right">$4,280</td><td class="g-ref text-right">3%</td><td class="g-ref text-right">$4,700</td>
+                  <td class="g-sep g-shr text-right">$1,200</td><td class="g-shr text-right">Elena K.</td><td class="g-shr text-right">$1,300</td>
+                  <td class="g-sep g-com text-right">$19,760</td><td class="g-com text-right">$20,960</td><td class="g-com text-right">$21,700</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">2</td><td><strong>Meridian Corp</strong></td><td>UA</td><td>RES</td><td>Beta</td>
+                  <td class="text-right">$98,400</td><td class="text-right">85%</td>
+                  <td class="g-sep g-dir text-right">$9,840</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$11,600</td>
+                  <td class="g-sep g-ref text-right">—</td><td class="g-ref text-right">—</td><td class="g-ref text-right">—</td>
+                  <td class="g-sep g-shr text-right">—</td><td class="g-shr text-right">—</td><td class="g-shr text-right">—</td>
+                  <td class="g-sep g-com text-right">$9,840</td><td class="g-com text-right">$9,840</td><td class="g-com text-right">$11,600</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">3</td><td><strong>Pinnacle Finance</strong></td><td>DE</td><td>FMS</td><td>Alpha</td>
+                  <td class="text-right">$76,200</td><td class="text-right">102%</td>
+                  <td class="g-sep g-dir text-right">$7,620</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$7,500</td>
+                  <td class="g-sep g-ref text-right">$2,286</td><td class="g-ref text-right">3%</td><td class="g-ref text-right">$2,250</td>
+                  <td class="g-sep g-shr text-right">$600</td><td class="g-shr text-right">Dmytro M.</td><td class="g-shr text-right">$550</td>
+                  <td class="g-sep g-com text-right">$10,506</td><td class="g-com text-right">$11,106</td><td class="g-com text-right">$10,300</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">4</td><td><strong>NordStream Tech</strong></td><td>PL</td><td>IT</td><td>Gamma</td>
+                  <td class="text-right">$55,600</td><td class="text-right">79%</td>
+                  <td class="g-sep g-dir text-right">$5,560</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$7,040</td>
+                  <td class="g-sep g-ref text-right">—</td><td class="g-ref text-right">—</td><td class="g-ref text-right">—</td>
+                  <td class="g-sep g-shr text-right">—</td><td class="g-shr text-right">—</td><td class="g-shr text-right">—</td>
+                  <td class="g-sep g-com text-right">$5,560</td><td class="g-com text-right">$5,560</td><td class="g-com text-right">$7,040</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">5</td><td><strong>Solaris Group</strong></td><td>UK</td><td>RES</td><td>Beta</td>
+                  <td class="text-right">$43,100</td><td class="text-right">95%</td>
+                  <td class="g-sep g-dir text-right">$4,310</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$4,540</td>
+                  <td class="g-sep g-ref text-right">$1,293</td><td class="g-ref text-right">3%</td><td class="g-ref text-right">$1,362</td>
+                  <td class="g-sep g-shr text-right">—</td><td class="g-shr text-right">—</td><td class="g-shr text-right">—</td>
+                  <td class="g-sep g-com text-right">$5,603</td><td class="g-com text-right">$5,603</td><td class="g-com text-right">$5,902</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">6</td><td><strong>Vertex Capital</strong></td><td>UA</td><td>FMS</td><td>Alpha</td>
+                  <td class="text-right">$38,400</td><td class="text-right">88%</td>
+                  <td class="g-sep g-dir text-right">$3,840</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$4,360</td>
+                  <td class="g-sep g-ref text-right">—</td><td class="g-ref text-right">—</td><td class="g-ref text-right">—</td>
+                  <td class="g-sep g-shr text-right">$800</td><td class="g-shr text-right">Elena K.</td><td class="g-shr text-right">$900</td>
+                  <td class="g-sep g-com text-right">$4,640</td><td class="g-com text-right">$4,640</td><td class="g-com text-right">$5,260</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">7</td><td><strong>Quantum Dynamics</strong></td><td>DE</td><td>IT</td><td>Gamma</td>
+                  <td class="text-right">$30,800</td><td class="text-right">112%</td>
+                  <td class="g-sep g-dir text-right">$3,080</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$2,750</td>
+                  <td class="g-sep g-ref text-right">$924</td><td class="g-ref text-right">3%</td><td class="g-ref text-right">$825</td>
+                  <td class="g-sep g-shr text-right">—</td><td class="g-shr text-right">—</td><td class="g-shr text-right">—</td>
+                  <td class="g-sep g-com text-right">$4,004</td><td class="g-com text-right">$4,004</td><td class="g-com text-right">$3,575</td>
+                </tr>
+                <tr class="totals-row">
+                  <td colspan="5"><strong>Totals</strong></td>
+                  <td class="text-right">$485,300</td><td class="text-right">91%</td>
+                  <td class="g-sep text-right">$48,530</td><td class="text-right">—</td><td class="text-right">$53,490</td>
+                  <td class="g-sep text-right">$8,783</td><td class="text-right">—</td><td class="text-right">$9,137</td>
+                  <td class="g-sep text-right">$2,600</td><td class="text-right">—</td><td class="text-right">$2,750</td>
+                  <td class="g-sep text-right">$59,913</td><td class="text-right">$62,113</td><td class="text-right">$65,377</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forecast commission drilldown — expanded -->
+      <div class="card secondary">
+        <div class="card-header">
+          <div class="card-title">✓ Forecast commission drilldown <span class="lbl">7</span></div>
+          <div class="card-toolbar">
+            <span class="toggler"><span class="toggler-switch"></span> Show commission structure</span>
+          </div>
+        </div>
+        <div class="card-body p0">
+          <div style="overflow-x:auto">
+            <table>
+              <thead>
+                <tr>
+                  <th rowspan="2">#</th>
+                  <th rowspan="2">Client</th>
+                  <th rowspan="2">SC</th>
+                  <th rowspan="2">SNC</th>
+                  <th rowspan="2">Team</th>
+                  <th rowspan="2" class="text-right">$ NET Rev</th>
+                  <th rowspan="2" class="text-right">% NET Budget</th>
+                  <th colspan="3" class="g-sep g-dir text-center">Dir</th>
+                  <th colspan="3" class="g-sep g-ref text-center">Referral</th>
+                  <th colspan="3" class="g-sep g-shr text-center">Sharing</th>
+                  <th colspan="3" class="g-sep g-com text-center">Commission</th>
+                </tr>
+                <tr>
+                  <th class="g-sep g-dir text-right" style="font-size:10px">$ Fee</th><th class="g-dir text-right" style="font-size:10px">%</th><th class="g-dir text-right" style="font-size:10px">$ Budget</th>
+                  <th class="g-sep g-ref text-right" style="font-size:10px">$ Fee</th><th class="g-ref text-right" style="font-size:10px">%</th><th class="g-ref text-right" style="font-size:10px">$ Budget</th>
+                  <th class="g-sep g-shr text-right" style="font-size:10px">$ Fee</th><th class="g-shr text-right" style="font-size:10px">To / From</th><th class="g-shr text-right" style="font-size:10px">$ Budget</th>
+                  <th class="g-sep g-com text-right" style="font-size:10px">$ Fee</th><th class="g-com text-right" style="font-size:10px">$ Total</th><th class="g-com text-right" style="font-size:10px">$ Budget</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-muted">1</td><td><strong>Astra Holdings</strong></td><td>UK</td><td>FMS</td><td>Alpha</td>
+                  <td class="text-right">$157,000</td><td class="text-right">100%</td>
+                  <td class="g-sep g-dir text-right">$15,700</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$15,700</td>
+                  <td class="g-sep g-ref text-right">$4,710</td><td class="g-ref text-right">3%</td><td class="g-ref text-right">$4,700</td>
+                  <td class="g-sep g-shr text-right">$1,300</td><td class="g-shr text-right">Elena K.</td><td class="g-shr text-right">$1,300</td>
+                  <td class="g-sep g-com text-right">$21,710</td><td class="g-com text-right">$23,010</td><td class="g-com text-right">$21,700</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">2</td><td><strong>Meridian Corp</strong></td><td>UA</td><td>RES</td><td>Beta</td>
+                  <td class="text-right">$115,600</td><td class="text-right">100%</td>
+                  <td class="g-sep g-dir text-right">$11,560</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$11,600</td>
+                  <td class="g-sep g-ref text-right">—</td><td class="g-ref text-right">—</td><td class="g-ref text-right">—</td>
+                  <td class="g-sep g-shr text-right">—</td><td class="g-shr text-right">—</td><td class="g-shr text-right">—</td>
+                  <td class="g-sep g-com text-right">$11,560</td><td class="g-com text-right">$11,560</td><td class="g-com text-right">$11,600</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">3</td><td><strong>Pinnacle Finance</strong></td><td>DE</td><td>FMS</td><td>Alpha</td>
+                  <td class="text-right">$74,600</td><td class="text-right">99%</td>
+                  <td class="g-sep g-dir text-right">$7,460</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$7,500</td>
+                  <td class="g-sep g-ref text-right">$2,238</td><td class="g-ref text-right">3%</td><td class="g-ref text-right">$2,250</td>
+                  <td class="g-sep g-shr text-right">$550</td><td class="g-shr text-right">Dmytro M.</td><td class="g-shr text-right">$550</td>
+                  <td class="g-sep g-com text-right">$10,248</td><td class="g-com text-right">$10,798</td><td class="g-com text-right">$10,300</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">4</td><td><strong>NordStream Tech</strong></td><td>PL</td><td>IT</td><td>Gamma</td>
+                  <td class="text-right">$70,400</td><td class="text-right">100%</td>
+                  <td class="g-sep g-dir text-right">$7,040</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$7,040</td>
+                  <td class="g-sep g-ref text-right">—</td><td class="g-ref text-right">—</td><td class="g-ref text-right">—</td>
+                  <td class="g-sep g-shr text-right">—</td><td class="g-shr text-right">—</td><td class="g-shr text-right">—</td>
+                  <td class="g-sep g-com text-right">$7,040</td><td class="g-com text-right">$7,040</td><td class="g-com text-right">$7,040</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">5</td><td><strong>Solaris Group</strong></td><td>UK</td><td>RES</td><td>Beta</td>
+                  <td class="text-right">$45,400</td><td class="text-right">100%</td>
+                  <td class="g-sep g-dir text-right">$4,540</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$4,540</td>
+                  <td class="g-sep g-ref text-right">$1,362</td><td class="g-ref text-right">3%</td><td class="g-ref text-right">$1,362</td>
+                  <td class="g-sep g-shr text-right">—</td><td class="g-shr text-right">—</td><td class="g-shr text-right">—</td>
+                  <td class="g-sep g-com text-right">$5,902</td><td class="g-com text-right">$5,902</td><td class="g-com text-right">$5,902</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">6</td><td><strong>Vertex Capital</strong></td><td>UA</td><td>FMS</td><td>Alpha</td>
+                  <td class="text-right">$43,600</td><td class="text-right">100%</td>
+                  <td class="g-sep g-dir text-right">$4,360</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$4,360</td>
+                  <td class="g-sep g-ref text-right">—</td><td class="g-ref text-right">—</td><td class="g-ref text-right">—</td>
+                  <td class="g-sep g-shr text-right">$900</td><td class="g-shr text-right">Elena K.</td><td class="g-shr text-right">$900</td>
+                  <td class="g-sep g-com text-right">$5,260</td><td class="g-com text-right">$5,260</td><td class="g-com text-right">$5,260</td>
+                </tr>
+                <tr>
+                  <td class="text-muted">7</td><td><strong>Quantum Dynamics</strong></td><td>DE</td><td>IT</td><td>Gamma</td>
+                  <td class="text-right">$27,500</td><td class="text-right">100%</td>
+                  <td class="g-sep g-dir text-right">$2,750</td><td class="g-dir text-right">10%</td><td class="g-dir text-right">$2,750</td>
+                  <td class="g-sep g-ref text-right">$825</td><td class="g-ref text-right">3%</td><td class="g-ref text-right">$825</td>
+                  <td class="g-sep g-shr text-right">—</td><td class="g-shr text-right">—</td><td class="g-shr text-right">—</td>
+                  <td class="g-sep g-com text-right">$3,575</td><td class="g-com text-right">$3,575</td><td class="g-com text-right">$3,575</td>
+                </tr>
+                <tr class="totals-row">
+                  <td colspan="5"><strong>Totals</strong></td>
+                  <td class="text-right">$534,100</td><td class="text-right">100%</td>
+                  <td class="g-sep text-right">$53,410</td><td class="text-right">—</td><td class="text-right">$53,490</td>
+                  <td class="g-sep text-right">$9,135</td><td class="text-right">—</td><td class="text-right">$9,137</td>
+                  <td class="g-sep text-right">$2,750</td><td class="text-right">—</td><td class="text-right">$2,750</td>
+                  <td class="g-sep text-right">$65,295</td><td class="text-right">$68,045</td><td class="text-right">$65,377</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /card-body -->
+  </div><!-- /main card -->
+
+</div>
+</body>
+</html>
