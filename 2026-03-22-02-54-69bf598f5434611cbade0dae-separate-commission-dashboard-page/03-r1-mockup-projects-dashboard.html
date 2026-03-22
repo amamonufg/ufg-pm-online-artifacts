@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1600">
+  <title>Projects Dashboard</title>
+  <link rel="stylesheet" href="03-r1-mockup-shared.css">
+</head>
+<body>
+<h1 class="page-title">Projects</h1>
+<div class="page-content">
+
+  <!-- RM Projects -->
+  <div class="card">
+    <div class="card-header" style="background:#f5f7ff">
+      <div class="card-title">✓ RM projects <span class="lbl">5</span></div>
+      <div class="card-toolbar">
+        <div class="date-range">📅 01/01/2025 → 31/12/2025 ▾</div>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="proj-stats">
+        <div class="proj-stat">
+          <div class="ps-title">Revenue</div>
+          <div class="ps-value">$1,840,200</div>
+          <div class="ps-sub">Invoiced <strong>$1,340,500</strong> · Paid <strong>$1,190,200</strong></div>
+          <div class="ps-bar"><div class="ps-fill blue" style="width:73%"></div></div>
+          <div style="font-size:11px;color:#7e8299;margin-top:3px">Paid / Invoiced: 73%</div>
+        </div>
+        <div class="proj-stat">
+          <div class="ps-title">Net Revenue</div>
+          <div class="ps-value">$318k</div>
+          <div class="ps-sub">Target <strong>$390k</strong></div>
+          <div class="ps-bar"><div class="ps-fill teal" style="width:82%"></div></div>
+          <div style="font-size:11px;color:#7e8299;margin-top:3px">5% of revenue · 107% of progress</div>
+        </div>
+        <div class="proj-stat">
+          <div class="ps-title">Origination</div>
+          <div class="ps-value">$29k</div>
+          <div class="ps-sub">Target <strong>$39k</strong></div>
+          <div class="ps-bar"><div class="ps-fill orange" style="width:74%"></div></div>
+          <div style="font-size:11px;color:#7e8299;margin-top:3px">Progress: 74%</div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <label>Hide zeros</label>
+        <span class="toggler"><span class="toggler-switch off"></span></span>
+        <div style="flex:1"></div>
+        <label>Client</label><select><option>All</option></select>
+        <label>BL</label><select><option>All</option></select>
+        <label>SL</label><select><option>All</option></select>
+        <label>SBL</label><select><option>All</option></select>
+        <div class="filter-sep"></div>
+        <label>Status</label><select><option>All</option></select>
+        <label>Type</label><select><option>All</option></select>
+      </div>
+
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">#</th>
+              <th rowspan="2">Name</th>
+              <th rowspan="2">Client</th>
+              <th rowspan="2">SC</th>
+              <th rowspan="2">SNC</th>
+              <th rowspan="2">Status</th>
+              <th rowspan="2">Type</th>
+              <th rowspan="2">RM</th>
+              <th rowspan="2" class="text-right">NET J.Cli</th>
+              <th colspan="4" class="g-sep g-dir text-center">REV</th>
+              <th colspan="2" class="g-sep g-ref text-center">COS</th>
+              <th colspan="3" class="g-sep g-com text-center">NET</th>
+            </tr>
+            <tr>
+              <th class="g-sep g-dir text-right" style="font-size:10px">Paid $</th>
+              <th class="g-dir text-right" style="font-size:10px">Target $</th>
+              <th class="g-dir text-right" style="font-size:10px">Invoiced $</th>
+              <th class="g-dir text-right" style="font-size:10px">Target $</th>
+              <th class="g-sep g-ref text-right" style="font-size:10px">Invoiced $</th>
+              <th class="g-ref text-right" style="font-size:10px">Target $</th>
+              <th class="g-sep g-com text-right" style="font-size:10px">Invoiced $</th>
+              <th class="g-com text-right" style="font-size:10px">Target $</th>
+              <th class="g-com text-right" style="font-size:10px">Target $</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-muted">1</td>
+              <td><strong>Financial Planning Advisory</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · FMS</span></td>
+              <td>Astra Holdings</td><td>UK</td><td>FMS</td>
+              <td><span class="badge badge-success">Revenue</span></td>
+              <td style="font-size:12px">Elena Kovalevskaya</td><td>EK</td>
+              <td class="text-right">$72,400</td>
+              <td class="g-sep g-dir text-right">$480,200</td><td class="g-dir text-right">$520,000</td><td class="g-dir text-right">$510,400</td><td class="g-dir text-right">$520,000</td>
+              <td class="g-sep g-ref text-right">$392,600</td><td class="g-ref text-right">$400,000</td>
+              <td class="g-sep g-com text-right">$117,800</td><td class="g-com text-right">$120,000</td><td class="g-com text-right">$120,000</td>
+            </tr>
+            <tr>
+              <td class="text-muted">2</td>
+              <td><strong>Risk Management Consulting</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · RES</span></td>
+              <td>Meridian Corp</td><td>UA</td><td>RES</td>
+              <td><span class="badge badge-success">Revenue</span></td>
+              <td style="font-size:12px">Elena Kovalevskaya</td><td>EK</td>
+              <td class="text-right">$48,200</td>
+              <td class="g-sep g-dir text-right">$310,500</td><td class="g-dir text-right">$380,000</td><td class="g-dir text-right">$335,800</td><td class="g-dir text-right">$380,000</td>
+              <td class="g-sep g-ref text-right">$238,200</td><td class="g-ref text-right">$280,000</td>
+              <td class="g-sep g-com text-right">$97,600</td><td class="g-com text-right">$100,000</td><td class="g-com text-right">$100,000</td>
+            </tr>
+            <tr>
+              <td class="text-muted">3</td>
+              <td><strong>M&amp;A Diligence Support</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · FMS</span></td>
+              <td>Pinnacle Finance</td><td>DE</td><td>FMS</td>
+              <td><span class="badge badge-warning">Progress</span></td>
+              <td style="font-size:12px">Elena Kovalevskaya</td><td>EK</td>
+              <td class="text-right">$29,800</td>
+              <td class="g-sep g-dir text-right">$198,000</td><td class="g-dir text-right">$240,000</td><td class="g-dir text-right">$210,400</td><td class="g-dir text-right">$240,000</td>
+              <td class="g-sep g-ref text-right">$140,200</td><td class="g-ref text-right">$170,000</td>
+              <td class="g-sep g-com text-right">$70,200</td><td class="g-com text-right">$70,000</td><td class="g-com text-right">$70,000</td>
+            </tr>
+            <tr>
+              <td class="text-muted">4</td>
+              <td><strong>IT Systems Audit</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · IT</span></td>
+              <td>NordStream Tech</td><td>PL</td><td>IT</td>
+              <td><span class="badge badge-info">Signed</span></td>
+              <td style="font-size:12px">Elena Kovalevskaya</td><td>EK</td>
+              <td class="text-right">$21,600</td>
+              <td class="g-sep g-dir text-right">$218,400</td><td class="g-dir text-right">$280,000</td><td class="g-dir text-right">$230,100</td><td class="g-dir text-right">$280,000</td>
+              <td class="g-sep g-ref text-right">$178,200</td><td class="g-ref text-right">$230,000</td>
+              <td class="g-sep g-com text-right">$51,900</td><td class="g-com text-right">$50,000</td><td class="g-com text-right">$50,000</td>
+            </tr>
+            <tr>
+              <td class="text-muted">5</td>
+              <td><strong>ESG Strategy Advisory</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · RES</span></td>
+              <td>Solaris Group</td><td>UK</td><td>RES</td>
+              <td><span class="badge badge-warning">Progress</span></td>
+              <td style="font-size:12px">Elena Kovalevskaya</td><td>EK</td>
+              <td class="text-right">$14,300</td>
+              <td class="g-sep g-dir text-right">$133,400</td><td class="g-dir text-right">$157,000</td><td class="g-dir text-right">$140,200</td><td class="g-dir text-right">$157,000</td>
+              <td class="g-sep g-ref text-right">$98,600</td><td class="g-ref text-right">$114,000</td>
+              <td class="g-sep g-com text-right">$41,600</td><td class="g-com text-right">$43,000</td><td class="g-com text-right">$43,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- LM Projects -->
+  <div class="card">
+    <div class="card-header" style="background:#f5f7ff">
+      <div class="card-title">✓ LM projects <span class="lbl">4</span></div>
+      <div class="card-toolbar">
+        <div class="date-range">📅 01/01/2025 → 31/12/2025 ▾</div>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="proj-stats">
+        <div class="proj-stat">
+          <div class="ps-title">Revenue</div>
+          <div class="ps-value">$921,400</div>
+          <div class="ps-sub">Invoiced <strong>$680,300</strong> · Paid <strong>$590,100</strong></div>
+          <div class="ps-bar"><div class="ps-fill blue" style="width:87%"></div></div>
+          <div style="font-size:11px;color:#7e8299;margin-top:3px">Paid / Invoiced: 87%</div>
+        </div>
+        <div class="proj-stat">
+          <div class="ps-title">Net Revenue</div>
+          <div class="ps-value">$148k</div>
+          <div class="ps-sub">Target <strong>$182k</strong></div>
+          <div class="ps-bar"><div class="ps-fill teal" style="width:81%"></div></div>
+          <div style="font-size:11px;color:#7e8299;margin-top:3px">5.8% of revenue · 103% of progress</div>
+        </div>
+        <div class="proj-stat">
+          <div class="ps-title">Origination</div>
+          <div class="ps-value">$12k</div>
+          <div class="ps-sub">Target <strong>$18k</strong></div>
+          <div class="ps-bar"><div class="ps-fill orange" style="width:67%"></div></div>
+          <div style="font-size:11px;color:#7e8299;margin-top:3px">Progress: 67%</div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <label>Hide zeros</label>
+        <span class="toggler"><span class="toggler-switch off"></span></span>
+        <div style="flex:1"></div>
+        <label>Client</label><select><option>All</option></select>
+        <label>BL</label><select><option>All</option></select>
+        <label>SL</label><select><option>All</option></select>
+        <label>SBL</label><select><option>All</option></select>
+        <div class="filter-sep"></div>
+        <label>Status</label><select><option>All</option></select>
+        <label>Type</label><select><option>All</option></select>
+      </div>
+
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">#</th>
+              <th rowspan="2">Name</th>
+              <th rowspan="2">Client</th>
+              <th rowspan="2">SC</th>
+              <th rowspan="2">SNC</th>
+              <th rowspan="2">Status</th>
+              <th rowspan="2">Type</th>
+              <th rowspan="2">RM</th>
+              <th rowspan="2" class="text-right">NET J.Cli</th>
+              <th colspan="4" class="g-sep g-dir text-center">REV</th>
+              <th colspan="2" class="g-sep g-ref text-center">COS</th>
+              <th colspan="3" class="g-sep g-com text-center">NET</th>
+            </tr>
+            <tr>
+              <th class="g-sep g-dir text-right" style="font-size:10px">Paid $</th>
+              <th class="g-dir text-right" style="font-size:10px">Target $</th>
+              <th class="g-dir text-right" style="font-size:10px">Invoiced $</th>
+              <th class="g-dir text-right" style="font-size:10px">Target $</th>
+              <th class="g-sep g-ref text-right" style="font-size:10px">Invoiced $</th>
+              <th class="g-ref text-right" style="font-size:10px">Target $</th>
+              <th class="g-sep g-com text-right" style="font-size:10px">Invoiced $</th>
+              <th class="g-com text-right" style="font-size:10px">Target $</th>
+              <th class="g-com text-right" style="font-size:10px">Target $</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-muted">1</td>
+              <td><strong>Infrastructure Debt Advisory</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · FMS</span></td>
+              <td>Vertex Capital</td><td>UA</td><td>FMS</td>
+              <td><span class="badge badge-success">Revenue</span></td>
+              <td style="font-size:12px">Andrei Miller</td><td>AM</td>
+              <td class="text-right">$38,200</td>
+              <td class="g-sep g-dir text-right">$260,400</td><td class="g-dir text-right">$310,000</td><td class="g-dir text-right">$275,100</td><td class="g-dir text-right">$310,000</td>
+              <td class="g-sep g-ref text-right">$198,200</td><td class="g-ref text-right">$230,000</td>
+              <td class="g-sep g-com text-right">$76,900</td><td class="g-com text-right">$80,000</td><td class="g-com text-right">$80,000</td>
+            </tr>
+            <tr>
+              <td class="text-muted">2</td>
+              <td><strong>Digital Transformation Roadmap</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · IT</span></td>
+              <td>Quantum Dynamics</td><td>DE</td><td>IT</td>
+              <td><span class="badge badge-warning">Progress</span></td>
+              <td style="font-size:12px">Andrei Miller</td><td>AM</td>
+              <td class="text-right">$22,100</td>
+              <td class="g-sep g-dir text-right">$180,200</td><td class="g-dir text-right">$225,000</td><td class="g-dir text-right">$192,400</td><td class="g-dir text-right">$225,000</td>
+              <td class="g-sep g-ref text-right">$141,600</td><td class="g-ref text-right">$175,000</td>
+              <td class="g-sep g-com text-right">$50,800</td><td class="g-com text-right">$50,000</td><td class="g-com text-right">$50,000</td>
+            </tr>
+            <tr>
+              <td class="text-muted">3</td>
+              <td><strong>Private Equity Fund Structuring</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · FMS</span></td>
+              <td>Astra Holdings</td><td>UK</td><td>FMS</td>
+              <td><span class="badge badge-info">Signed</span></td>
+              <td style="font-size:12px">Andrei Miller</td><td>AM</td>
+              <td class="text-right">$18,600</td>
+              <td class="g-sep g-dir text-right">$145,800</td><td class="g-dir text-right">$185,000</td><td class="g-dir text-right">$156,400</td><td class="g-dir text-right">$185,000</td>
+              <td class="g-sep g-ref text-right">$112,800</td><td class="g-ref text-right">$142,000</td>
+              <td class="g-sep g-com text-right">$43,600</td><td class="g-com text-right">$43,000</td><td class="g-com text-right">$43,000</td>
+            </tr>
+            <tr>
+              <td class="text-muted">4</td>
+              <td><strong>Compliance Framework Review</strong><br><span class="text-muted" style="font-size:11px">UFG Andrei-Miller · RES</span></td>
+              <td>Meridian Corp</td><td>UA</td><td>RES</td>
+              <td><span class="badge badge-warning">Progress</span></td>
+              <td style="font-size:12px">Andrei Miller</td><td>AM</td>
+              <td class="text-right">$12,400</td>
+              <td class="g-sep g-dir text-right">$93,900</td><td class="g-dir text-right">$201,400</td><td class="g-dir text-right">$116,300</td><td class="g-dir text-right">$201,400</td>
+              <td class="g-sep g-ref text-right">$74,100</td><td class="g-ref text-right">$156,400</td>
+              <td class="g-sep g-com text-right">$42,200</td><td class="g-com text-right">$45,000</td><td class="g-com text-right">$45,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
