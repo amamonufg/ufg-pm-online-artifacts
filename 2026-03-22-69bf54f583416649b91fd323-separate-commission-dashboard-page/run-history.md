@@ -57,3 +57,26 @@ Dashboard / RM
 **Commission page** (`/dashboard/rm/commissions`): shows only the Commission section (stats + drilldowns) with `showAll=true` by default and DrilldownTable cards non-collapsible or expanded.
 
 **Projects page** (existing `/dashboard/rm` route or new `/dashboard/rm/projects`): shows only RmProjects + LmProjects.
+
+---
+
+## Revision 1
+
+The current RM dashboard page combines commission data and project data in one view. This design separates them into two dedicated pages: (1) a Commission Dashboard with all commission stats and drilldown tables expanded by default, and (2) a Projects Dashboard showing only RM and LM project sections.
+
+![Commission Dashboard](03-r1-mockup-commission-dashboard.png)
+[Open mockup](03-r1-mockup-commission-dashboard.html)
+
+![Projects Dashboard](03-r1-mockup-projects-dashboard.png)
+[Open mockup](03-r1-mockup-projects-dashboard.html)
+
+### Layout Notes
+
+- Entry point for the Commission Dashboard: a new menu item under Financial (e.g. "RM Commissions") alongside the existing "RM" entry
+- The existing "RM" menu item (/dashboard/rm) will show only projects — no commission section
+- On the Commission Dashboard, both "Commission drilldown" and "Forecast commission drilldown" tables are expanded by default with Show all enabled
+- The "Show commission structure" toggle is on by default, showing Dir / Referral / Sharing / Commission column groups
+- The visibility toggle (eye icon) hides dollar amounts — same existing behavior
+- On the Projects Dashboard, RM Projects and LM Projects have independent date range pickers in their card headers
+- The user switcher (toggler) is available on both pages for managers viewing other users' data
+- Both pages require appropriate feature permissions (commissions for Commission page; rm/lm for Projects page)
